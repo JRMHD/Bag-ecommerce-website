@@ -3,18 +3,44 @@
 
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
-    <!-- meta tags -->
+    <title>Page Not Found | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya</title>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description"
+        content="Sorry, the page you're looking for cannot be found. Explore affordable, high-quality travel bags with Imuz Travel Bags.">
+    <meta name="keywords" content="404 Error Page, Page Not Found Imuz Travel Bags, Travel Bags Kenya">
+    <meta name="author" content="Imuz Travel Bags">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!-- fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Page Not Found | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta property="og:description"
+        content="Oops! The page you are trying to access is not available. Check out affordable travel bags on our homepage.">
+    <meta property="og:image" content="assets/img/404-error-image.jpg"> <!-- Replace with a relevant 404 image -->
+    <meta property="og:url" content="https://www.imuztravelbags.co.ke/404"> <!-- Replace with your 404 page URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page Not Found | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta name="twitter:description"
+        content="Oops! The page you're looking for isn't here. Discover premium travel bags on our website.">
+    <meta name="twitter:image" content="assets/img/404-error-image.jpg"> <!-- Replace with a relevant 404 image -->
+
+    <!-- SEO Scripts -->
+    <link rel="canonical" href="https://www.imuztravelbags.co.ke/404"> <!-- Update with your 404 page URL -->
+
+
     <!-- all css -->
     <style>
         :root {

@@ -3,18 +3,47 @@
 
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
-    <!-- meta tags -->
+    <title>Imuz Travel Bags | Affordable & Quality Travel Bags in Kenya</title>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description"
+        content="Discover high-quality and affordable travel bags in Nairobi, Kenya with Imuz Travel Bags. Pay on delivery and enjoy countrywide delivery for unmatched convenience.">
+    <meta name="keywords"
+        content="Travel Bags Kenya, Affordable Travel Bags, Pay on Delivery Bags Kenya, Quality Travel Bags Nairobi, Online Bags Store Kenya">
+    <meta name="author" content="Imuz Travel Bags">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!-- fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Imuz Travel Bags | Affordable & Quality Travel Bags in Kenya">
+    <meta property="og:description"
+        content="Shop premium travel bags at unbeatable prices with Imuz Travel Bags. Pay on delivery and enjoy delivery across Kenya.">
+    <meta property="og:image" content="assets/img/social-share-image.jpg">
+    <!-- Replace with an appropriate image URL -->
+    <meta property="og:url" content="https://www.imuztravelbags.co.ke"> <!-- Update with your site URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imuz Travel Bags | Affordable & Quality Travel Bags in Kenya">
+    <meta name="twitter:description"
+        content="Shop premium travel bags at unbeatable prices with Imuz Travel Bags. Pay on delivery and enjoy delivery across Kenya.">
+    <meta name="twitter:image" content="assets/img/social-share-image.jpg">
+    <!-- Replace with an appropriate image URL -->
+
+    <!-- SEO Scripts -->
+    <link rel="canonical" href="https://www.imuztravelbags.co.ke"> <!-- Your site URL -->
+
+
     <!-- all css -->
     <style>
         :root {
@@ -100,14 +129,13 @@
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Top Branded
+                                        Discover Affordable
                                     </p>
                                     <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Best Bags 2022
+                                        Premium Travel Bags
                                     </h2>
-                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                                        href="collection-left-sidebar.html"
+                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
                                 </div>
@@ -122,14 +150,13 @@
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Top Branded
+                                        Pay on Delivery
                                     </p>
                                     <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Best Bags 2022
+                                        Anywhere in Kenya
                                     </h2>
-                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                                        href="collection-left-sidebar.html"
+                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
                                 </div>
@@ -144,15 +171,14 @@
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Top Branded
+                                        High Quality Meets
                                     </p>
                                     <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Best Bags 2022
+                                        Unbeatable Prices
                                     </h2>
                                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                                        href="collection-left-sidebar.html"
-                                        data-animation="animate__animated animate__fadeInUp">SHOP
+                                        href="shop" data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
                                 </div>
                             </div>
@@ -170,26 +196,28 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-6 col-md-6 col-12" data-aos="fade-right" data-aos-duration="1200">
-                                <a class="banner-item position-relative rounded" href="collection-left-sidebar.html">
+                                <a class="banner-item position-relative rounded" href="shop">
                                     <img class="banner-img" src="assets/img/banner/bag-1.jpg" alt="banner-1">
                                     <div class="content-absolute content-slide">
                                         <div class="container height-inherit d-flex align-items-center">
                                             <div class="content-box banner-content p-4">
-                                                <p class="heading_18 mb-3">Mini Backpack</p>
-                                                <h2 class="heading_34">25% off on <br>all bags</h2>
+                                                <p class="heading_18 mb-3">Stylish Mini Backpacks</p>
+                                                <h2 class="heading_34">Save 25% on All Bags</h2>
+                                                <p class="heading_18 mt-3">Perfect for everyday travel. Shop now!</p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12" data-aos="fade-left" data-aos-duration="1200">
-                                <a class="banner-item position-relative rounded" href="collection-left-sidebar.html">
+                                <a class="banner-item position-relative rounded" href="shop">
                                     <img class="banner-img" src="assets/img/banner/bag-2.jpg" alt="banner-2">
                                     <div class="content-absolute content-slide">
                                         <div class="container height-inherit d-flex align-items-center">
                                             <div class="content-box banner-content p-4">
-                                                <p class="heading_18 mb-3">New Year Sell</p>
-                                                <h2 class="heading_34">25% off <br>for women</h2>
+                                                <p class="heading_18 mb-3">Limited Time Offer</p>
+                                                <h2 class="heading_34">25% off Women's Bags</h2>
+                                                <p class="heading_18 mt-3">Find the perfect fit for your travels!</p>
                                             </div>
                                         </div>
                                     </div>
@@ -199,6 +227,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- banner end -->
 
 
@@ -210,77 +239,72 @@
                             <h2 class="section-heading">Shop By Category</h2>
                         </div>
                         <div class="grid-container shop-category-inner">
-                            <a class="grid-item grid-item-1 position-relative rounded mt-0 d-flex"
-                                href="collection-left-sidebar.html">
-                                <img class="banner-img" src="assets/img/banner/bag-3.jpg" alt="banner-1">
+                            <!-- Category 1: New Arrivals (Women Beautiful Handbag) -->
+                            <a class="grid-item grid-item-1 position-relative rounded mt-0 d-flex" href="shop">
+                                <img class="banner-img" src="assets/img/banner/bag-3.jpg"
+                                    alt="Women Beautiful Handbag">
                                 <div class="content-absolute content-slide">
                                     <div class="container height-inherit d-flex">
                                         <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                            <h2 class="heading_18">Women Beautiful Handbag</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP
-                                                COLLECTION
-                                            </span>
+                                            <p class="heading_16 m-0 primary-color">Fresh New Arrivals</p>
+                                            <h2 class="heading_18">Stylish Women's Handbags</h2>
+                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex"
-                                href="collection-left-sidebar.html">
-                                <img class="banner-img" src="assets/img/banner/bag-4.jpg" alt="banner-1">
+
+                            <!-- Category 2: New Arrivals (Bag Bouquet) -->
+                            <a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="shop">
+                                <img class="banner-img" src="assets/img/banner/bag-4.jpg" alt="Bag Bouquet">
                                 <div class="content-absolute content-slide">
                                     <div class="container height-inherit d-flex">
                                         <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                            <h2 class="heading_18">Bag Bouquet</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP
-                                                COLLECTION
-                                            </span>
+                                            <p class="heading_16 m-0 primary-color">Latest Collections</p>
+                                            <h2 class="heading_18">Charming Bag Bouquet</h2>
+                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid-item grid-item-3 position-relative rounded mt-0 d-flex"
-                                href="collection-left-sidebar.html">
-                                <img class="banner-img" src="assets/img/banner/bag-5.jpg" alt="banner-1">
+
+                            <!-- Category 3: Quality Product (Leather Collection) -->
+                            <a class="grid-item grid-item-3 position-relative rounded mt-0 d-flex" href="shop">
+                                <img class="banner-img" src="assets/img/banner/bag-5.jpg" alt="Leather Collection">
                                 <div class="content-absolute content-slide">
                                     <div class="container height-inherit d-flex justify-content-end text-end">
                                         <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Quality Product</p>
-                                            <h2 class="heading_18">Leather collection</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP
-                                                COLLECTION
-                                            </span>
+                                            <p class="heading_16 m-0 primary-color">Top-Quality Leather</p>
+                                            <h2 class="heading_18">Premium Leather Bags</h2>
+                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid-item grid-item-4 position-relative rounded mt-0 d-flex"
-                                href="collection-left-sidebar.html">
-                                <img class="banner-img" src="assets/img/banner/bag-6.jpg" alt="banner-1">
+
+                            <!-- Category 4: New Arrivals (Office Carrier) -->
+                            <a class="grid-item grid-item-4 position-relative rounded mt-0 d-flex" href="shop">
+                                <img class="banner-img" src="assets/img/banner/bag-6.jpg" alt="Office Carrier">
                                 <div class="content-absolute content-slide">
                                     <div class="container height-inherit d-flex">
                                         <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                            <h2 class="heading_18">Office Carrier</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP
-                                                COLLECTION
-                                            </span>
+                                            <p class="heading_16 m-0 primary-color">Ideal for Work</p>
+                                            <h2 class="heading_18">Office Carrier Bags</h2>
+                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid-item grid-item-5 position-relative rounded mt-0 d-flex"
-                                href="collection-left-sidebar.html">
-                                <img class="banner-img" src="assets/img/banner/bag-7.jpg" alt="banner-1">
+
+                            <!-- Category 5: New Arrivals (Travel Bags) -->
+                            <a class="grid-item grid-item-5 position-relative rounded mt-0 d-flex" href="shop">
+                                <img class="banner-img" src="assets/img/banner/bag-7.jpg" alt="Travel Bags">
                                 <div class="content-absolute content-slide">
                                     <div class="container height-inherit d-flex">
                                         <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                            <h2 class="heading_18">Travel The World</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP
-                                                COLLECTION
-                                            </span>
+                                            <p class="heading_16 m-0 primary-color">Explore the World</p>
+                                            <h2 class="heading_18">Durable Travel Bags</h2>
+                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
                                         </div>
                                     </div>
                                 </div>
@@ -290,6 +314,7 @@
                 </div>
             </div>
             <!-- shop by category end -->
+
 
 
 
@@ -306,8 +331,9 @@
                                         fill="#00234D" />
                                 </svg>
                             </div>
-                            <h2 class="section-heading">Bag & Water pot</h2>
-                            <p class="section-subheading">See how our customers styled shoe products in their foot</p>
+                            <h2 class="section-heading">Bag & Water Bottle Trends</h2>
+                            <p class="section-subheading">See how our customers style their Imuz Travel Bags and water
+                                bottles in everyday life.</p>
                         </div>
                         <div class="instagram-container position-relative mt-48">
                             <div class="common-slider"
@@ -333,7 +359,7 @@
                             }'>
                                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                                     <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="index-bag.html">
+                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
                                             <img src="assets/img/instagram/bag1.jpg" alt="img"
                                                 class="instagram-card-img rounded">
                                         </a>
@@ -341,7 +367,7 @@
                                 </div>
                                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                                     <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="index-bag.html">
+                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
                                             <img src="assets/img/instagram/bag2.jpg" alt="img"
                                                 class="instagram-card-img rounded">
                                         </a>
@@ -349,7 +375,7 @@
                                 </div>
                                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                                     <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="index-bag.html">
+                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
                                             <img src="assets/img/instagram/bag3.jpg" alt="img"
                                                 class="instagram-card-img rounded">
                                         </a>
@@ -357,7 +383,7 @@
                                 </div>
                                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                                     <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="index-bag.html">
+                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
                                             <img src="assets/img/instagram/bag4.jpg" alt="img"
                                                 class="instagram-card-img rounded">
                                         </a>
@@ -365,7 +391,7 @@
                                 </div>
                                 <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
                                     <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="index-bag.html">
+                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
                                             <img src="assets/img/instagram/bag2.jpg" alt="img"
                                                 class="instagram-card-img rounded">
                                         </a>
@@ -384,8 +410,9 @@
                 <div class="faq-inner">
                     <div class="container">
                         <div class="section-header text-center">
-                            <h2 class="section-heading">Frequently Asked Question</h2>
-                            <p class="section-subheading">All your questions about Axion answered </p>
+                            <h2 class="section-heading">Frequently Asked Questions</h2>
+                            <p class="section-subheading">Everything you need to know about Imuz Travel Bags and
+                                Accessories</p>
                         </div>
                         <div class="faq-container">
                             <div class="row">
@@ -393,7 +420,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq1">
-                                            Is Bisum a safe investment?
+                                            What makes Imuz Travel Bags different from others?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -404,12 +431,11 @@
                                             </span>
                                         </h2>
                                         <div id="faq1" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">Imuz Travel Bags are designed with durability,
+                                                comfort, and style in mind, perfect for travelers who seek a
+                                                high-quality experience. From waterproof materials to innovative
+                                                compartments, our bags are made to cater to the needs of modern
+                                                adventurers.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -417,7 +443,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq2">
-                                            How do I set up a crypto wallet?
+                                            How can I choose the right Imuz Travel Bag for my trip?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -428,12 +454,11 @@
                                             </span>
                                         </h2>
                                         <div id="faq2" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">Selecting the perfect bag depends on your
+                                                travel style. Whether you’re going for a weekend getaway or an
+                                                international adventure, our bags are available in various sizes to
+                                                accommodate your essentials. You can use our size guide on the product
+                                                page to make the best choice!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -441,7 +466,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq3">
-                                            Where and how do I buy Bisum?
+                                            Do Imuz bags come with a warranty?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -452,12 +477,9 @@
                                             </span>
                                         </h2>
                                         <div id="faq3" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">Yes! All Imuz Travel Bags come with a limited
+                                                warranty covering manufacturing defects. Please refer to our warranty
+                                                policy for more details on how to file a claim and what’s covered.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -465,7 +487,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq4">
-                                            What often will results be reported?
+                                            Are Imuz Travel Bags water-resistant?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -476,12 +498,10 @@
                                             </span>
                                         </h2>
                                         <div id="faq4" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">Yes, all our travel bags are made with
+                                                water-resistant materials to protect your belongings during unexpected
+                                                weather conditions. However, we recommend keeping your most sensitive
+                                                items in waterproof pouches for extra protection.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -489,7 +509,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq5">
-                                            How can I get support?
+                                            How do I care for my Imuz Travel Bag?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -500,12 +520,10 @@
                                             </span>
                                         </h2>
                                         <div id="faq5" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">To keep your Imuz Travel Bag looking great,
+                                                simply wipe it down with a damp cloth and mild detergent. Avoid machine
+                                                washing to preserve the quality and structure of the bag. Always store
+                                                your bag in a cool, dry place when not in use.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -513,7 +531,7 @@
                                     <div class="faq-item rounded">
                                         <h2 class="faq-heading heading_18 collapsed d-flex align-items-center justify-content-between"
                                             data-bs-toggle="collapse" data-bs-target="#faq6">
-                                            Is Axion available on a major Product exchange?
+                                            Can I buy Imuz products internationally?
                                             <span class="faq-heading-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="#F76B6A"
@@ -524,24 +542,22 @@
                                             </span>
                                         </h2>
                                         <div id="faq6" class="accordion-collapse collapse">
-                                            <p class="faq-body text_14">Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit.
-                                                Sit repellat
-                                                quod facere illo esse cumque inventore veniam necessitatibus totam
-                                                repudiandae. Hic rerum animi modi sed?
-                                            </p>
+                                            <p class="faq-body text_14">Absolutely! Imuz Travel Bags and accessories
+                                                are available for international shipping. Just choose your destination
+                                                at checkout, and we’ll ensure your order reaches you safely.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="view-all text-center" data-aos="fade-up" data-aos-duration="700">
-                                <a class="btn-primary" href="faq.html">SEE MORE</a>
+                                <a class="btn-primary" href="contact">SEE MORE</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- faq end -->
+
         </main>
 
         <!-- footer start -->

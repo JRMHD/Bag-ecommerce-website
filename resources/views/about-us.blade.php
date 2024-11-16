@@ -4,18 +4,45 @@
 
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
-    <!-- meta tags -->
+    <title>About Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya</title>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description"
+        content="Learn more about Imuz Travel Bags, your trusted store for affordable and high-quality travel bags in Kenya. Offering pay-on-delivery and countrywide delivery.">
+    <meta name="keywords"
+        content="About Imuz Travel Bags, Affordable Travel Bags Kenya, High-Quality Travel Bags Nairobi, Pay on Delivery Bags Kenya">
+    <meta name="author" content="Imuz Travel Bags">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!-- fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="About Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta property="og:description"
+        content="Discover Imuz Travel Bags, where affordability meets quality. Learn more about our pay-on-delivery service and countrywide delivery.">
+    <meta property="og:image" content="assets/img/about-us-social.jpg"> <!-- Replace with about-related image -->
+    <meta property="og:url" content="https://www.imuztravelbags.co.ke/about"> <!-- Replace with your about page URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta name="twitter:description"
+        content="Get to know Imuz Travel Bags, Kenya's go-to store for premium travel bags with convenient pay-on-delivery and nationwide delivery.">
+    <meta name="twitter:image" content="assets/img/about-us-social.jpg"> <!-- Replace with about-related image -->
+
+    <!-- SEO Scripts -->
+    <link rel="canonical" href="https://www.imuztravelbags.co.ke/about"> <!-- Update with your about page URL -->
+
+
     <!-- all css -->
     <style>
         :root {
@@ -104,34 +131,37 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-12">
                                 <div class="about-hero-content">
-                                    <h2 class="about-hero-title">We Provide Expert Service and aim to have a long term
-                                        with you</h2>
-                                    <p class="about-hero-subtitle">We provide a full range of front end mechanical
-                                        repairs for all makes and models of cars, no matter</p>
+                                    <h2 class="about-hero-title">Explore the World with iMuz Travel Bags</h2>
+                                    <p class="about-hero-subtitle">At iMuz, we design travel bags that combine
+                                        durability, style, and comfort. Whether you're heading on a weekend getaway or
+                                        an international adventure, our bags are crafted to meet your travel needs.</p>
                                     <ul class="about-hero-action p-0">
                                         <li class="action-item d-flex">
                                             <div class="action-count">01</div>
                                             <div class="action-content">
-                                                <h4 class="action-title"><a href="#">Get A Quote</a></h4>
-                                                <p class="action-subtitle">Through True Rich Attended does no end it his
-                                                    mother since real had half every.</p>
+                                                <h4 class="action-title"><a href="#">Shop Our Collection</a></h4>
+                                                <p class="action-subtitle">Browse our wide range of travel bags designed
+                                                    for every traveler. From carry-ons to duffel bags, find the perfect
+                                                    travel companion.</p>
                                             </div>
                                         </li>
                                         <li class="action-item d-flex">
                                             <div class="action-count">02</div>
                                             <div class="action-content">
-                                                <h4 class="action-title"><a href="#">Book An Appointment</a></h4>
-                                                <p class="action-subtitle">Through True Rich Attended does no end it his
-                                                    mother since real.</p>
+                                                <h4 class="action-title"><a href="#">Customize Your Bag</a></h4>
+                                                <p class="action-subtitle">Personalize your travel experience with our
+                                                    customizable bags. Choose colors, designs, and accessories that
+                                                    match your style and needs.</p>
                                             </div>
                                         </li>
                                         <li class="action-item d-flex">
                                             <div class="action-count">03</div>
                                             <div class="action-content">
-                                                <h4 class="action-title"><a href="#">Get Your Service Done</a>
+                                                <h4 class="action-title"><a href="#">Read Customer Reviews</a>
                                                 </h4>
-                                                <p class="action-subtitle">Ecstatic unsatiable saw his giving Remain
-                                                    expense you position concluded.</p>
+                                                <p class="action-subtitle">Discover why our customers love iMuz travel
+                                                    bags. Learn about their experiences and how our products have
+                                                    enhanced their journeys.</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -139,20 +169,16 @@
                             </div>
                             <div class="col-lg-6 col-md-12 col-12">
                                 <div class="about-hero-img">
-                                    <img src="assets/img/about/about-hero.jpg" alt="img">
+                                    <img src="assets/img/about/about-hero.jpg" alt="iMuz Travel Bags Collection">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- about hero end -->
-
-
-
-
-
             </div>
         </main>
+
 
         <!-- footer start -->
         @include('footer')

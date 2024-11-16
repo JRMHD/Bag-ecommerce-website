@@ -3,18 +3,40 @@
 
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
-    <!-- meta tags -->
+    <title>Shop Travel Bags | Imuz Travel Bags - Affordable & Quality in Kenya</title>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description" content="Browse a wide range of high-quality travel bags at Imuz Travel Bags. Affordable prices, pay on delivery, and countrywide delivery across Kenya.">
+    <meta name="keywords" content="Travel Bags Shop Kenya, Buy Travel Bags Online, Affordable Travel Bags Nairobi, Quality Travel Bags Kenya, Travel Luggage Nairobi">
+    <meta name="author" content="Imuz Travel Bags">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!-- fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Shop Travel Bags | Imuz Travel Bags - Affordable & Quality in Kenya">
+    <meta property="og:description" content="Explore premium travel bags at affordable prices. Enjoy pay-on-delivery and countrywide shipping with Imuz Travel Bags.">
+    <meta property="og:image" content="assets/img/social-share-image.jpg"> <!-- Replace with a specific shop-related image -->
+    <meta property="og:url" content="https://www.imuztravelbags.co.ke/shop"> <!-- Replace with your shop page URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop Travel Bags | Imuz Travel Bags - Affordable & Quality in Kenya">
+    <meta name="twitter:description" content="Shop a wide variety of travel bags at great prices. Enjoy pay-on-delivery and delivery across Kenya with Imuz Travel Bags.">
+    <meta name="twitter:image" content="assets/img/social-share-image.jpg"> <!-- Replace with a specific shop-related image -->
+
+    <!-- SEO Scripts -->
+    <link rel="canonical" href="https://www.imuztravelbags.co.ke/shop"> <!-- Update with your shop page URL -->
+
+
     <!-- all css -->
     <style>
         :root {

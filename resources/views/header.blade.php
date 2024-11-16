@@ -5,26 +5,26 @@
             <div class="col-lg-3 d-lg-block d-none">
                 <div class="announcement-call-wrapper">
                     <div class="announcement-call">
-                        <a class="announcement-text text-white" href="tel:+1-078-2376">Call: +1 078 2376</a>
+                        <a class="announcement-text text-white" href="tel:+1-078-2376">Call: 0769839595</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-12">
                 <div class="announcement-text-wrapper d-flex align-items-center justify-content-center">
-                    <p class="announcement-text text-white">New year sale - 30% off</p>
+                    <p class="announcement-text text-white">Best Selling Offer - 30% off</p>
                 </div>
             </div>
             <div class="col-lg-3 d-lg-block d-none">
                 <div class="announcement-meta-wrapper d-flex align-items-center justify-content-end">
                     <div class="announcement-meta d-flex align-items-center">
-                        <a class="announcement-login announcement-text text-white" href="login">
+                        <a class="announcement-login announcement-text text-white" href="/">
                             <svg class="icon icon-user" width="10" height="11" viewBox="0 0 10 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M5 0C3.07227 0 1.5 1.57227 1.5 3.5C1.5 4.70508 2.11523 5.77539 3.04688 6.40625C1.26367 7.17188 0 8.94141 0 11H1C1 8.78516 2.78516 7 5 7C7.21484 7 9 8.78516 9 11H10C10 8.94141 8.73633 7.17188 6.95312 6.40625C7.88477 5.77539 8.5 4.70508 8.5 3.5C8.5 1.57227 6.92773 0 5 0ZM5 1C6.38672 1 7.5 2.11328 7.5 3.5C7.5 4.88672 6.38672 6 5 6C3.61328 6 2.5 4.88672 2.5 3.5C2.5 2.11328 3.61328 1 5 1Z"
                                     fill="#fff" />
                             </svg>
-                            <span>Login</span>
+                            {{-- <span>Login</span> --}}
                         </a>
                         <span class="separator-login d-flex px-3">
                             <svg width="2" height="9" viewBox="0 0 2 9" fill="none"
@@ -36,7 +36,7 @@
                             <button type="button" class="currency-btn btn-reset text-white" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img class="flag" src="assets/img/flag/usd.jpg" alt="img">
-                                <span>USD</span>
+                                <span>KES</span>
                                 <span>
                                     <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="#fff"
@@ -46,38 +46,7 @@
                                 </span>
                             </button>
 
-                            <ul class="currency-list dropdown-menu dropdown-menu-end px-2">
-                                <li class="currency-list-item ">
-                                    <a class="currency-list-option" href="#" data-value="USD">
-                                        <img class="flag" src="assets/img/flag/usd.jpg" alt="img">
-                                        <span>USD</span>
-                                    </a>
-                                </li>
-                                <li class="currency-list-item ">
-                                    <a class="currency-list-option" href="#" data-value="CAD">
-                                        <img class="flag" src="assets/img/flag/cad.jpg" alt="img">
-                                        <span>CAD</span>
-                                    </a>
-                                </li>
-                                <li class="currency-list-item ">
-                                    <a class="currency-list-option" href="#" data-value="EUR">
-                                        <img class="flag" src="assets/img/flag/eur.jpg" alt="img">
-                                        <span>EUR</span>
-                                    </a>
-                                </li>
-                                <li class="currency-list-item ">
-                                    <a class="currency-list-option" href="#" data-value="JPY">
-                                        <img class="flag" src="assets/img/flag/jpy.jpg" alt="img">
-                                        <span>JPY</span>
-                                    </a>
-                                </li>
-                                <li class="currency-list-item ">
-                                    <a class="currency-list-option" href="#" data-value="GBP">
-                                        <img class="flag" src="assets/img/flag/gbp.jpg" alt="img">
-                                        <span>GBP</span>
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -94,10 +63,11 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-4">
                     <div class="header-logo">
-                        <a href="/" class="logo-main">
-                            <img src="assets/img/logo.png" loading="lazy" alt="bisum">
-                        </a>
+                        <a href="/" class="logo-main"
+                            style="font-weight: bold; color: #003366; text-decoration: none; font-size: 15px;">Imuz
+                            Travel Bags</a>
                     </div>
+
                 </div>
                 <div class="col-lg-6 d-lg-block d-none">
                     <nav class="site-navigation">
@@ -138,8 +108,7 @@
                                     fill="black" />
                             </svg>
                         </a>
-                        <a class="header-action-item header-cart ms-4" href="#drawer-cart"
-                            data-bs-toggle="offcanvas">
+                        <a class="header-action-item header-cart ms-4" href="#drawer-cart" data-bs-toggle="offcanvas">
                             <svg class="icon icon-cart" width="24" height="26" viewBox="0 0 24 26"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -232,11 +201,11 @@
                                 </path>
                             </svg>
                         </span>
-                        Call: +1 078 2376
+                        Call: 0769839595
                     </a>
                 </li>
                 <li class="utilty-menu-item">
-                    <a class="announcement-login announcement-text" href="login">
+                    <a class="announcement-login announcement-text" href="/">
                         <span class="utilty-icon-wrapper">
                             <svg class="icon icon-user" width="24" height="24" viewBox="0 0 10 11"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -245,11 +214,11 @@
                                     fill="#000" />
                             </svg>
                         </span>
-                        <span>Login</span>
+                        <span></span>
                     </a>
                 </li>
                 <li class="utilty-menu-item">
-                    <a class="header-action-item header-wishlist" href="wishlist">
+                    <a class="header-action-item header-wishlist" href="cart">
                         <span class="utilty-icon-wrapper">
                             <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22"
                                 fill="#000" xmlns="http://www.w3.org/2000/svg">
@@ -258,14 +227,14 @@
                                     fill="#000" />
                             </svg>
                         </span>
-                        <span>My wishlist</span>
+                        <span>My Cart</span>
                     </a>
                 </li>
                 <li class="utilty-menu-item">
                     <button type="button" class="currency-btn btn-reset" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <img class="flag" src="assets/img/flag/usd.jpg" alt="img">
-                        <span>USD</span>
+                        <span>KES</span>
                         <span class="utilty-icon-wrapper">
                             <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1"
@@ -275,38 +244,7 @@
                         </span>
                     </button>
 
-                    <ul class="currency-list dropdown-menu dropdown-menu-end px-2">
-                        <li class="currency-list-item ">
-                            <a class="currency-list-option" href="#" data-value="USD">
-                                <img class="flag" src="assets/img/flag/usd.jpg" alt="img">
-                                <span>USD</span>
-                            </a>
-                        </li>
-                        <li class="currency-list-item ">
-                            <a class="currency-list-option" href="#" data-value="CAD">
-                                <img class="flag" src="assets/img/flag/cad.jpg" alt="img">
-                                <span>CAD</span>
-                            </a>
-                        </li>
-                        <li class="currency-list-item ">
-                            <a class="currency-list-option" href="#" data-value="EUR">
-                                <img class="flag" src="assets/img/flag/eur.jpg" alt="img">
-                                <span>EUR</span>
-                            </a>
-                        </li>
-                        <li class="currency-list-item ">
-                            <a class="currency-list-option" href="#" data-value="JPY">
-                                <img class="flag" src="assets/img/flag/jpy.jpg" alt="img">
-                                <span>JPY</span>
-                            </a>
-                        </li>
-                        <li class="currency-list-item ">
-                            <a class="currency-list-option" href="#" data-value="GBP">
-                                <img class="flag" src="assets/img/flag/gbp.jpg" alt="img">
-                                <span>GBP</span>
-                            </a>
-                        </li>
-                    </ul>
+
                 </li>
             </ul>
         </div>

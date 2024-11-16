@@ -3,18 +3,46 @@
 
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
-    <!-- meta tags -->
+    <title>Contact Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya</title>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="meta description">
+    <meta name="description"
+        content="Get in touch with Imuz Travel Bags for inquiries, orders, or support. We’re here to help you find the perfect travel bag. Nationwide delivery available.">
+    <meta name="keywords"
+        content="Contact Imuz Travel Bags, Travel Bags Store Kenya, Support for Travel Bags Nairobi, Buy Travel Bags Kenya, Contact Details Travel Bags">
+    <meta name="author" content="Imuz Travel Bags">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!-- fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Contact Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta property="og:description"
+        content="Contact Imuz Travel Bags for any questions, support, or to place an order. Enjoy affordable travel bags, pay-on-delivery, and countrywide shipping.">
+    <meta property="og:image" content="assets/img/contact-us-social.jpg"> <!-- Replace with contact-related image -->
+    <meta property="og:url" content="https://www.imuztravelbags.co.ke/contact">
+    <!-- Replace with your contact page URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | Imuz Travel Bags - Affordable & Quality Travel Bags in Kenya">
+    <meta name="twitter:description"
+        content="Reach out to Imuz Travel Bags for inquiries, orders, or customer support. Affordable travel bags with pay-on-delivery available nationwide.">
+    <meta name="twitter:image" content="assets/img/contact-us-social.jpg"> <!-- Replace with contact-related image -->
+
+    <!-- SEO Scripts -->
+    <link rel="canonical" href="https://www.imuztravelbags.co.ke/contact"> <!-- Update with your contact page URL -->
+
+
     <!-- all css -->
     <style>
         :root {
@@ -115,9 +143,9 @@
                                         </div>
                                         <div class="contact-details">
                                             <h2 class="contact-title">Mail Address</h2>
-                                            <a class="contact-info" href="mailto:info@example.com">info@example.com</a>
+                                            {{-- <a class="contact-info" href="mailto:info@example.com">info@example.com</a> --}}
                                             <a class="contact-info"
-                                                href="mailto:info2@example.com">info2@example.com</a>
+                                                href="mailto:info@imuztravelbags.co.ke">info@imuztravelbags.co.ke</a>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +161,7 @@
                                         </div>
                                         <div class="contact-details">
                                             <h2 class="contact-title">Office Location</h2>
-                                            <p class="contact-info">2715 Ash Dr. San Jose, South Dakota 83475</p>
+                                            <p class="contact-info">Nairobi Kenya</p>
                                         </div>
                                     </div>
                                 </div>
@@ -149,8 +177,8 @@
                                         </div>
                                         <div class="contact-details">
                                             <h2 class="contact-title">Phone Number</h2>
-                                            <a class="contact-info" href="tel:(201) 555-0124">(201) 555-0124</a>
-                                            <a class="contact-info" href="tel:(307) 555-0133">(307) 555-0133</a>
+                                            <a class="contact-info" href="tel:+254 769 8395">+254 769 839595</a>
+                                            <a class="contact-info" href="tel:+254 745 478277">+254 745 478277</a>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +195,7 @@
                     <div class="container">
                         <div class="contact-form-area">
                             <div class="section-header mb-4">
-                                <h2 class="section-heading">Drop us a line</h2>
+                                <h2 class="section-heading">Share Your Message</h2>
                                 <p class="section-subheading">We would like to hear from you.</p>
                             </div>
                             <div class="contact-form--wrapper">

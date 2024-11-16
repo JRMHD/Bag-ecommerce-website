@@ -16,11 +16,10 @@
                                  </span>
                              </h4>
                              <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                 <li class="footer-menu-item"><a href="about-us.html">About us</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Press center</a></li>
-                                 <li class="footer-menu-item"><a href="blog.html">Our magazine</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Our group</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Work with us</a></li>
+                                 <li class="footer-menu-item"><a href="about-us">About us</a></li>
+                                 <li class="footer-menu-item"><a href="contact">Press center</a></li>
+
+                                 <li class="footer-menu-item"><a href="contact">Work with us</a></li>
                              </ul>
                          </div>
                      </div>
@@ -37,11 +36,9 @@
                                  </span>
                              </h4>
                              <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                 <li class="footer-menu-item"><a href="about-us.html">Brand catalog</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Discount codes</a></li>
-                                 <li class="footer-menu-item"><a href="collection-left-sidebar.html">Furniture</a></li>
-                                 <li class="footer-menu-item"><a href="collection-left-sidebar.html">Sofa</a></li>
-                                 <li class="footer-menu-item"><a href="collection-left-sidebar.html">Chair</a></li>
+                                 <li class="footer-menu-item"><a href="shop">Shop Now</a></li>
+                                 <li class="footer-menu-item"><a href="contact">Discount codes</a></li>
+
                              </ul>
                          </div>
                      </div>
@@ -58,19 +55,21 @@
                                  </span>
                              </h4>
                              <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                 <li class="footer-menu-item"><a href="faq.html">Chair</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
-                                 <li class="footer-menu-item"><a href="about-us.html">Support</a></li>
-                                 <li class="footer-menu-item"><a href="contact.html">Contact</a></li>
+
+                                 <li class="footer-menu-item"><a href="about-us">Privacy policy</a></li>
+                                 <li class="footer-menu-item"><a href="contact">Support</a></li>
+                                 <li class="footer-menu-item"><a href="contact">Contact</a></li>
                              </ul>
                          </div>
                      </div>
                      <div class="col-xl-4 col-lg-5 col-md-6 col-12 footer-widget">
                          <div class="footer-widget-inner">
                              <h4 class="footer-logo">
-                                 <a href="https://spreethemesprevious.github.io/"><img src="assets/img/logo-accent.png"
-                                         alt="bisum"></a>
+                                 <a href="/" style="font-weight: bold; color: #003366;">Imuz Travel Bags</a>
                              </h4>
+
+
+
                              <div class="footer-newsletter">
                                  <p class="footer-text mb-3">Stay up to date with all the news.</p>
                                  <div class="newsletter-wrapper">
@@ -152,11 +151,14 @@
              <div
                  class="footer-bottom-inner d-flex flex-wrap justify-content-md-between justify-content-center align-items-center">
                  <ul class="footer-bottom-menu list-unstyled d-flex flex-wrap align-items-center mb-0">
-                     <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
-                     <li class="footer-menu-item"><a href="about-us.html">Terms & Conditions</a></li>
+                     <li class="footer-menu-item"><a href="about-us">Privacy policy</a></li>
+                     <li class="footer-menu-item"><a href="contact">Terms & Conditions</a></li>
                  </ul>
-                 <p class="copyright footer-text">©<span class="current-year"></span> Spree Themes.</p>
+                 <p class="copyright footer-text">©<span class="current-year"></span> Imuz Travel Bags. Developed by
+                     <a href="https://jrmhd.tech/" target="_blank" rel="noopener noreferrer">JRMHD TECHNOLOGIES</a>.
+                 </p>
              </div>
          </div>
      </div>
+
  </footer>
