@@ -5,6 +5,8 @@
 <head>
     <title>Imuz Travel Bags | Affordable & Quality Travel Bags in Kenya</title>
     <!-- Meta Tags -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -582,7 +584,9 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body px-4">
-                        <form action="#" class="newletter-modal-form common-form mx-auto">
+                        <form id="subscribe-form" action="{{ url('/subscribe') }}" method="POST"
+                            class="newletter-modal-form common-form mx-auto">
+                            @csrf
                             <div class="section-header mb-3">
                                 <h4
                                     class="newsletter-modal-heading heading_34 d-flex align-items-center justify-content-center">
@@ -595,7 +599,6 @@
                                         </path>
                                         <polyline points="22,6 12,13 2,6"></polyline>
                                     </svg>
-
                                     SUBSCRIBE & SAVE
                                 </h4>
                                 <hr>
@@ -603,12 +606,94 @@
                                     hear about exclusive offers, new arrivals & more.</p>
                             </div>
                             <div class="newsletter-input-box d-flex align-items-center">
-                                <input class="mt-2 px-3" type="email" placeholder="Email address">
+                                <input id="subscriber-email" class="mt-2 px-3" type="email"
+                                    placeholder="Email address" required>
                                 <button type="submit" class="btn-primary d-block mt-2 btn-signin">SUBSCRIBE</button>
                             </div>
+
+                            <!-- Loading spinner (green rotating circle) -->
+                            <div id="loading-spinner"></div>
+
+                            <div id="message-box" style="display: none;" class="text-center mt-4"></div>
+
                             <p class="newsletter-modal-misc text_14 mt-4 text-center pb-4">You can change your email
                                 preference any time by clicking "unsubscribe" in your email.</p>
                         </form>
+                        <style>
+                            /* Loading spinner style */
+                            #loading-spinner {
+                                border: 5px solid #f3f3f3;
+                                /* Light gray background */
+                                border-top: 5px solid green;
+                                /* Green top border for the spinner */
+                                border-radius: 50%;
+                                /* Make it a circle */
+                                width: 40px;
+                                /* Size of the spinner */
+                                height: 40px;
+                                /* Size of the spinner */
+                                animation: spin 1s linear infinite;
+                                /* Rotate animation */
+                                display: none;
+                                /* Initially hidden */
+                            }
+
+                            /* Spinner animation */
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        </style>
+
+                        <script>
+                            // Handle form submission with AJAX
+                            document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+                                event.preventDefault();
+
+                                var email = document.getElementById('subscriber-email').value;
+                                var form = new FormData();
+                                form.append('email', email);
+
+                                // Show loading spinner
+                                document.getElementById('loading-spinner').style.display = 'block';
+                                document.getElementById('message-box').style.display = 'none';
+
+                                // Make AJAX request
+                                fetch("{{ url('/subscribe') }}", {
+                                        method: 'POST',
+                                        body: form,
+                                        headers: {
+                                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                                'content')
+                                        }
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        document.getElementById('loading-spinner').style.display = 'none';
+                                        document.getElementById('message-box').style.display = 'block';
+
+                                        if (data.success) {
+                                            document.getElementById('message-box').innerHTML =
+                                                `<p style="color: green;">${data.success}</p>`;
+                                        } else if (data.error) {
+                                            document.getElementById('message-box').innerHTML =
+                                                `<p style="color: red;">${data.error}</p>`;
+                                        }
+                                    })
+                                    .catch(error => {
+                                        document.getElementById('loading-spinner').style.display = 'none';
+                                        document.getElementById('message-box').style.display = 'block';
+                                        document.getElementById('message-box').innerHTML =
+                                            `<p style="color: red;">There was an error. Please try again.</p>`;
+                                    });
+                            });
+                        </script>
+
                     </div>
                 </div>
             </div>

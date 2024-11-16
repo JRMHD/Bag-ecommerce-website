@@ -100,7 +100,7 @@
                                     fill="black" />
                             </svg>
                         </a>
-                        <a class="header-action-item header-wishlist ms-4 d-none d-lg-block" href="wishlist">
+                        <a class="header-action-item header-wishlist ms-4 d-none d-lg-block" href="cart">
                             <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -108,7 +108,7 @@
                                     fill="black" />
                             </svg>
                         </a>
-                        <a class="header-action-item header-cart ms-4" href="#drawer-cart" data-bs-toggle="offcanvas">
+                        <a class="header-action-item header-cart ms-4" href="cart" data-bs-toggle="offcanvas">
                             <svg class="icon icon-cart" width="24" height="26" viewBox="0 0 24 26"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

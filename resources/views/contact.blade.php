@@ -199,31 +199,41 @@
                                 <p class="section-subheading">We would like to hear from you.</p>
                             </div>
                             <div class="contact-form--wrapper">
-                                <form action="#" class="contact-form">
+                                @if (session('status'))
+                                    <div
+                                        class="alert alert-{{ session('status-type') === 'success' ? 'success' : 'danger' }} mt-4">
+                                        <strong>{{ session('status') }}</strong>
+                                    </div>
+                                @endif
+                                <form action="{{ route('contact.submit') }}" method="POST" class="contact-form">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-6 col-12">
                                             <fieldset>
-                                                <input type="text" placeholder="Full name" />
+                                                <input type="text" name="full_name" placeholder="Full name"
+                                                    required />
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <fieldset>
-                                                <input type="email" placeholder="Email Address*" />
+                                                <input type="email" name="email" placeholder="Email Address*"
+                                                    required />
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <fieldset>
-                                                <input type="text" placeholder="Type a subject" />
+                                                <input type="text" name="subject" placeholder="Type a subject"
+                                                    required />
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <fieldset>
-                                                <input type="text" placeholder="Phone Number" />
+                                                <input type="text" name="phone" placeholder="Phone Number" />
                                             </fieldset>
                                         </div>
                                         <div class="col-md-12 col-12">
                                             <fieldset>
-                                                <textarea cols="20" rows="6" placeholder="Write your message here*"></textarea>
+                                                <textarea name="message" cols="20" rows="6" placeholder="Write your message here*" required></textarea>
                                             </fieldset>
                                             <button type="submit"
                                                 class="position-relative review-submit-btn contact-submit-btn">SEND
@@ -231,6 +241,25 @@
                                         </div>
                                     </div>
                                 </form>
+                                <style>
+                                    .alert {
+                                        padding: 15px;
+                                        border-radius: 5px;
+                                        margin-top: 20px;
+                                        font-size: 16px;
+                                    }
+
+                                    .alert-success {
+                                        background-color: #4CAF50;
+                                        color: white;
+                                    }
+
+                                    .alert-danger {
+                                        background-color: #f44336;
+                                        color: white;
+                                    }
+                                </style>
+
                             </div>
                         </div>
                     </div>

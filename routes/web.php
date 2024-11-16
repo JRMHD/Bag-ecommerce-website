@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\SubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +61,24 @@ Route::fallback(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+
+// Admin routes
+Route::get('admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login.post');
+Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', ProductController::class);
+});
+
+// Frontend Routes
+Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
+Route::get('/product/{id}', [ProductController::class, 'showProduct'])->name('product.show');
+
+Route::get('/shop/search', [ProductController::class, 'search'])->name('shop.search');
+Route::get('/shop/load-more', [ProductController::class, 'loadMore']);
+Route::post('/contact', [ContactFormController::class, 'submit'])->name('contact.submit');
+Route::post('/subscribe', [SubscriptionController::class, 'subscribe']);
