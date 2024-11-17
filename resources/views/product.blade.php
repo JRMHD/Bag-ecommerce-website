@@ -358,6 +358,195 @@
         .main-image.fade {
             opacity: 0;
         }
+
+
+        /* New styles for reviews section */
+        .reviews-section {
+            padding: 2rem 1rem;
+            background: var(--bg-primary);
+            margin-top: 2rem;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .reviews-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .review-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            max-width: 1400px;
+            margin: 1rem auto;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+        }
+
+        .review-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .review-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            background: #ecfdf5;
+            color: #059669;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .whatsapp-button {
+            padding: 1rem;
+            border: 1px solid #25D366;
+            border-radius: 12px;
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            /* Green */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .notification.error {
+            background-color: #f44336;
+            /* Red */
+        }
+
+        .bundle-save-section {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .bundle-save-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #5a2d82;
+            /* Adjust to your theme color */
+        }
+
+        .bundle-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            /* Ensures responsiveness */
+        }
+
+        .bundle-option {
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .bundle-option .bundle-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .bundle-option .bundle-saving {
+            font-size: 14px;
+            color: #5a2d82;
+            /* Adjust for your branding */
+            margin: 5px 0;
+        }
+
+        .bundle-option .bundle-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #27ae60;
+            /* Highlight discount price */
+        }
+
+        .bundle-option .bundle-original-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .bundle-option.most-popular {
+            border: 2px solid #5a2d82;
+            /* Highlight popular option */
+            background: #faf3fc;
+        }
+
+        .bundle-option.most-popular .bundle-title {
+            color: #5a2d82;
+        }
     </style>
 </head>
 
@@ -435,11 +624,294 @@
                             <i class="fas fa-shopping-cart"></i>
                             Add to Cart
                         </button>
-                        <button class="secondary-button">Save for Later</button>
+                        <a href="https://wa.me/254769839595?text=Hello! I'm interested in ordering: %0A%0AProduct: {{ $product->name }}%0APrice: KES {{ number_format($product->price) }}%0A%0ACould you please assist me with the purchase?"
+                            class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Order Via WhatsApp
+                        </a>
+                        <a href="/cart" class="whatsapp-button" target="_blank">
+                            <i class="fas fa-shopping-cart"></i>
+                            View Cart
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bundle-save-section">
+                <h2 class="bundle-save-title">Bundle & Save</h2>
+                <div class="bundle-options">
+                    <div class="bundle-option">
+                        <span class="bundle-title">Buy 1</span>
+                        <span class="bundle-saving">You save KSh8,676.08</span>
+                        <span class="bundle-price">KSh8,413.16</span>
+                        <span class="bundle-original-price"><s>KSh17,089.24</s></span>
+                    </div>
+                    <div class="bundle-option most-popular">
+                        <span class="bundle-title">Buy 2</span>
+                        <span class="bundle-saving">You save KSh17,357.16</span>
+                        <span class="bundle-price">KSh16,821.32</span>
+                        <span class="bundle-original-price"><s>KSh34,178.48</s></span>
+                    </div>
+                    <div class="bundle-option">
+                        <span class="bundle-title">Buy 3</span>
+                        <span class="bundle-saving">You save KSh26,038.24</span>
+                        <span class="bundle-price">KSh25,229.48</span>
+                        <span class="bundle-original-price"><s>KSh51,267.72</s></span>
+                    </div>
+                    <div class="bundle-option">
+                        <span class="bundle-title">Buy 4</span>
+                        <span class="bundle-saving">You save KSh34,719.32</span>
+                        <span class="bundle-price">KSh33,637.64</span>
+                        <span class="bundle-original-price"><s>KSh68,356.96</s></span>
                     </div>
                 </div>
             </div>
 
+            <!-- Add this section before the related-section -->
+            <section class="reviews-section">
+                <div class="reviews-header">
+                    <h2 class="reviews-title">Customer Reviews</h2>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-text">4.8 out of 5</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AO</div>
+                        <div>
+                            <div class="reviewer-name">Aisha Omar</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">2 days ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Mashallah! The quality is exceptional and delivery was very quick. I
+                        received my order in Eastleigh within 24 hours. Will definitely order again!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JK</div>
+                        <div>
+                            <div class="reviewer-name">John Kamau</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Amazing product! The price is very fair considering the quality. Delivery
+                        to Westlands was smooth and the packaging was excellent.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">FH</div>
+                        <div>
+                            <div class="reviewer-name">Fatuma Hassan</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">The WhatsApp ordering process was very convenient. Customer service was
+                        excellent and very responsive. Product arrived in perfect condition to South C.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">WO</div>
+                        <div>
+                            <div class="reviewer-name">Wanjiku Odhiambo</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Great value for money! The product exceeded my expectations.
+                        Communication was clear throughout the delivery process to Kileleshwa.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AA</div>
+                        <div>
+                            <div class="reviewer-name">Abdi Ahmed</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">SubhanAllah, the quality is outstanding! Fast delivery to Pangani, and
+                        the WhatsApp communication was very clear. The product looks exactly like in the photos.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">MK</div>
+                        <div>
+                            <div class="reviewer-name">Muthoni Kariuki</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">I was hesitant about ordering via WhatsApp at first, but the process was
+                        super smooth! Delivery to Kilimani was quick, and the product is worth every shilling.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">YM</div>
+                        <div>
+                            <div class="reviewer-name">Yasmin Mohamed</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Alhamdulillah! Second time ordering and still impressed. The customer
+                        service is exceptional, and delivery to California Estate was prompt. Highly recommend!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RO</div>
+                        <div>
+                            <div class="reviewer-name">Reuben Omondi</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="review-date">2 months ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Very satisfied with my purchase! The packaging was secure and delivery to
+                        Umoja was faster than expected. Will definitely order again.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">HI</div>
+                        <div>
+                            <div class="reviewer-name">Hussein Ibrahim</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Excellent service from start to finish! The WhatsApp ordering was
+                        convenient, and delivery to South B was well-coordinated. The product quality is top-notch.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">NK</div>
+                        <div>
+                            <div class="reviewer-name">Njeri Kimani</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">2 months ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">The product arrived in perfect condition to Lavington. Customer support
+                        was very helpful and responsive on WhatsApp. Fair price for the quality received.</p>
+                </div>
+            </section>
             <section class="related-section">
                 <h2 class="related-title">You Might Also Like</h2>
                 <div class="related-grid">
@@ -475,6 +947,44 @@
             });
             thumbnail.classList.add('active');
         }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.primary-button').click(function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '{{ route('cart.add') }}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        product_id: {{ $product->id }}
+                    },
+                    success: function(response) {
+                        showNotification(response.message);
+                    },
+                    error: function() {
+                        showNotification('Error adding product to cart!', true);
+                    }
+                });
+            });
+
+            function showNotification(message, isError = false) {
+                const notification = $('<div>')
+                    .addClass('notification')
+                    .toggleClass('error', isError)
+                    .text(message)
+                    .appendTo('body');
+
+                notification.fadeIn();
+
+                setTimeout(() => {
+                    notification.fadeOut(() => notification.remove());
+                }, 3000);
+            }
+        });
     </script>
 </body>
 

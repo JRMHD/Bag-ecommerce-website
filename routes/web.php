@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +85,27 @@ Route::get('/shop/search', [ProductController::class, 'search'])->name('shop.sea
 Route::get('/shop/load-more', [ProductController::class, 'loadMore']);
 Route::post('/contact', [ContactFormController::class, 'submit'])->name('contact.submit');
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe']);
+
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::patch('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::get('/cart/count', [CartController::class, 'getCount'])->name('cart.count');
+
+
+// Checkout routes
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.place-order');
+Route::get('/order/confirmation/{id}', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
+
+// // Admin routes
+// Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+//     Route::get('/orders', [Admin\OrderController::class, 'index'])->name('orders.index');
+//     Route::get('/orders/{order}', [Admin\OrderController::class, 'show'])->name('orders.show');
+//     Route::patch('/orders/{order}/status', [Admin\OrderController::class, 'updateStatus'])->name('orders.update-status');
+// });
+
+Route::get('admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
+Route::get('admin/orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+Route::patch('admin/orders/{order}/status', [OrderController::class, 'updateStatus'])->name('admin.orders.update-status');

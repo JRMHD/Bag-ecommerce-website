@@ -10,7 +10,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        // Get products ordered by the most recent
+        $products = Product::orderBy('created_at', 'desc')->get();
         return view('admin.products.index', compact('products'));
     }
 
@@ -94,14 +95,19 @@ class ProductController extends Controller
 
     public function shop()
     {
-        $products = Product::all();
+        // Get products ordered by the most recent
+        $products = Product::orderBy('created_at', 'desc')->get();
         return view('shop', compact('products'));
     }
+
 
     public function showProduct($id)
     {
         $product = Product::findOrFail($id);
-        $products = Product::where('id', '!=', $id)->limit(4)->get();  // Get related products
+        $products = Product::where('id', '!=', $id)
+            ->orderBy('created_at', 'desc')
+            ->limit(4)
+            ->get();
         return view('product', compact('product', 'products'));
     }
 }

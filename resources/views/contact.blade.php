@@ -145,7 +145,7 @@
                                             <h2 class="contact-title">Mail Address</h2>
                                             {{-- <a class="contact-info" href="mailto:info@example.com">info@example.com</a> --}}
                                             <a class="contact-info"
-                                                href="mailto:info@imuztravelbags.co.ke">info@imuztravelbags.co.ke</a>
+                                                href="mailto:imuzwatches@gmail.com">imuzwatches@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>

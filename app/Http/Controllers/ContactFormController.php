@@ -26,7 +26,7 @@ class ContactFormController extends Controller
             $contact = ContactForm::create($validated);
 
             // Send email
-            Mail::to('jrmqhd@gmail.com')->send(new ContactFormMail($contact));
+            Mail::to('imuzwatches@gmail.com')->send(new ContactFormMail($contact));
 
             // Flash success message
             return redirect()->back()->with('status', 'Your message has been sent successfully!')->with('status-type', 'success');
