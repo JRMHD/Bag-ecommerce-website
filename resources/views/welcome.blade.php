@@ -217,6 +217,26 @@
                 </div>
             </section>
 
+
+            <section style="display: flex; align-items: center; justify-content: space-between; padding: 20px; font-family: Arial, sans-serif;">
+    <!-- Video 1 Section -->
+    <div style="flex: 1; margin-right: 20px; max-width: 100%;">
+        <video autoplay muted loop style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+            <source src="\assets\VIDEOMAGES\video 1 use.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Video 2 Section -->
+    <div style="flex: 1; margin-left: 20px; max-width: 100%;">
+        <video autoplay muted loop style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+            <source src="\assets\VIDEOMAGES\video 2 use.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
+
             <!-- Responsive Styles -->
             <style>
                 /* Default desktop styles */
@@ -465,6 +485,7 @@
             <!-- instagram end -->
 
             <!-- Add this section before the related-section -->
+            <!-- Add this section before the related-section -->
             <section class="reviews-section">
                 <div class="reviews-header">
                     <h2 class="reviews-title">Customer Reviews</h2>
@@ -478,6 +499,7 @@
                     </div>
                 </div>
 
+                <!-- Review 1 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">AO</div>
@@ -499,8 +521,11 @@
                     </div>
                     <p class="review-content">Mashallah! The quality is exceptional and delivery was very quick. I
                         received my order in Eastleigh within 24 hours. Will definitely order again!</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.51_8036d335.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 2 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">JK</div>
@@ -522,8 +547,11 @@
                     </div>
                     <p class="review-content">Amazing product! The price is very fair considering the quality. Delivery
                         to Westlands was smooth and the packaging was excellent.</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.52_e4c0f03f.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 3 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">FH</div>
@@ -545,8 +573,11 @@
                     </div>
                     <p class="review-content">The WhatsApp ordering process was very convenient. Customer service was
                         excellent and very responsive. Product arrived in perfect condition to South C.</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.53_9d986089.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 4 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">WO</div>
@@ -568,8 +599,11 @@
                     </div>
                     <p class="review-content">Great value for money! The product exceeded my expectations.
                         Communication was clear throughout the delivery process to Kileleshwa.</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.53_ac6fbfe5.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 5 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">AA</div>
@@ -591,8 +625,11 @@
                     </div>
                     <p class="review-content">SubhanAllah, the quality is outstanding! Fast delivery to Pangani, and
                         the WhatsApp communication was very clear. The product looks exactly like in the photos.</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.54_4b9810cd.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 6 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">MK</div>
@@ -614,8 +651,11 @@
                     </div>
                     <p class="review-content">I was hesitant about ordering via WhatsApp at first, but the process was
                         super smooth! Delivery to Kilimani was quick, and the product is worth every shilling.</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.54_aa5c7221.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 7 -->
                 <div class="review-card">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">YM</div>
@@ -637,36 +677,42 @@
                     </div>
                     <p class="review-content">Alhamdulillah! Second time ordering and still impressed. The customer
                         service is exceptional, and delivery to California Estate was prompt. Highly recommend!</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.54_d7405929.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 8 -->
                 <div class="review-card">
                     <div class="reviewer-info">
-                        <div class="reviewer-avatar">RO</div>
+                        <div class="reviewer-avatar">MK</div>
                         <div>
-                            <div class="reviewer-name">Reuben Omondi</div>
+                            <div class="reviewer-name">Mary Kamau</div>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <div class="review-date">2 months ago</div>
+                            <div class="review-date">3 weeks ago</div>
                         </div>
                         <span class="verified-badge">
                             <i class="fas fa-check"></i>
                             Verified Purchase
                         </span>
                     </div>
-                    <p class="review-content">Very satisfied with my purchase! The packaging was secure and delivery to
-                        Umoja was faster than expected. Will definitely order again.</p>
+                    <p class="review-content">Excellent quality! Delivered to my doorsteps in just a couple of days.
+                        Very happy with my purchase, and will definitely recommend it to others!</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.55_7e4f94bb.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 9 -->
                 <div class="review-card">
                     <div class="reviewer-info">
-                        <div class="reviewer-avatar">HI</div>
+                        <div class="reviewer-avatar">AN</div>
                         <div>
-                            <div class="reviewer-name">Hussein Ibrahim</div>
+                            <div class="reviewer-name">Ahmed Noor</div>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -681,15 +727,18 @@
                             Verified Purchase
                         </span>
                     </div>
-                    <p class="review-content">Excellent service from start to finish! The WhatsApp ordering was
-                        convenient, and delivery to South B was well-coordinated. The product quality is top-notch.</p>
+                    <p class="review-content">Great customer support! The product is just as described, and delivery
+                        was right on time. I’ll definitely buy again!</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.55_eb406bdd.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
 
+                <!-- Review 10 -->
                 <div class="review-card">
                     <div class="reviewer-info">
-                        <div class="reviewer-avatar">NK</div>
+                        <div class="reviewer-avatar">NN</div>
                         <div>
-                            <div class="reviewer-name">Njeri Kimani</div>
+                            <div class="reviewer-name">Nancy Njeri</div>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -697,15 +746,17 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <div class="review-date">2 months ago</div>
+                            <div class="review-date">2 weeks ago</div>
                         </div>
                         <span class="verified-badge">
                             <i class="fas fa-check"></i>
                             Verified Purchase
                         </span>
                     </div>
-                    <p class="review-content">The product arrived in perfect condition to Lavington. Customer support
-                        was very helpful and responsive on WhatsApp. Fair price for the quality received.</p>
+                    <p class="review-content">I'm very impressed with the service. My order came within two days to
+                        Eastleigh. The quality of the product is excellent!</p>
+                    <img src="\assets\VIDEOMAGES\WhatsApp Image 2024-11-19 at 17.49.57_fd5f729d.jpg"
+                        alt="Product Image" class="review-product-image">
                 </div>
             </section>
 
@@ -741,6 +792,20 @@
                     border: 1px solid rgba(0, 0, 0, 0.1);
                     max-width: 1400px;
                     margin: 1rem auto;
+                }
+
+                /* Product Image Styling */
+                .review-product-image {
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                    object-fit: cover;
+                    margin-top: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .reviewer-info {

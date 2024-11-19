@@ -4,496 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $product->name }}</title>
+    <title>{{ $product->name }} Product Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <style>
-        :root {
-            --royal-blue: #2563eb;
-            --light-orange: #fb923c;
-            --text-gray: #4b5563;
-            --border-color: #e5e7eb;
-            --success-green: #10b981;
-            --background-light: #f8fafc;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: white;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .navigation-breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-gray);
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--background-light);
-            color: var(--text-gray);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .back-button:hover {
-            background-color: #e2e8f0;
-            transform: translateX(-4px);
-        }
-
-        .product-gallery {
-            position: sticky;
-            top: 2rem;
-        }
-
-        .product-image-container {
-            border-radius: 24px;
-            overflow: hidden;
-            background: var(--background-light);
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .product-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-        .color-selection {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .color-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 500;
-        }
-
-        .color-btn:hover {
-            border-color: var(--royal-blue);
-            background: var(--background-light);
-            transform: translateY(-2px);
-        }
-
         .color-btn.active {
-            border-color: var(--royal-blue);
-            background: #eef2ff;
+            transform: scale(1.1);
+            border-width: 2px;
         }
 
-        .color-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 2px solid var(--border-color);
-        }
-
-        .product-details {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .product-header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
-        }
-
-        .product-title {
-            font-size: 2.5rem;
-            color: #1f2937;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .product-description {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            margin: 1.5rem 0;
-            line-height: 1.8;
-        }
-
-        .rating-price-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: var(--background-light);
-            border-radius: 16px;
-        }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stars {
-            color: var(--light-orange);
-            font-size: 1.25rem;
-        }
-
-        .rating-number {
-            font-weight: 600;
-            color: var(--text-gray);
-        }
-
-        .price-container {
-            text-align: right;
-        }
-
-        .original-price {
-            font-size: 1.25rem;
-            color: var(--text-gray);
-            text-decoration: line-through;
-            margin-right: 1rem;
-        }
-
-        .slashed-price {
-            font-size: 2rem;
-            color: var(--royal-blue);
-            font-weight: bold;
-        }
-
-        .action-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .btn {
-            padding: 1.25rem 2rem;
-            border-radius: 12px;
-            border: none;
+        .thumbnail-image:hover {
+            opacity: 0.8;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-cart {
-            background: var(--royal-blue);
-            color: white;
-        }
-
-        .btn-view-cart {
-            background: white;
-            border: 2px solid var(--royal-blue);
-            color: var(--royal-blue);
-            grid-column: span 2;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .info-sections {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .expandable-section {
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        .expandable-section:hover {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .expandable-header {
-            padding: 1.5rem;
-            background: var(--background-light);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .expandable-content {
-            padding: 1.5rem;
-            display: none;
-            line-height: 1.8;
-            color: var(--text-gray);
-        }
-
-        .expandable-content.show {
-            display: block;
-        }
-
-        .bundle-and-save {
-            margin-top: 3rem;
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .bundle-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 1.5rem 0;
-        }
-
-        .bundle-table th,
-        .bundle-table td {
-            padding: 1.25rem;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        .bundle-table th {
-            background: var(--background-light);
-            font-weight: 600;
-        }
-
-        .bundle-table tr:first-child th:first-child {
-            border-top-left-radius: 12px;
-        }
-
-        .bundle-table tr:first-child th:last-child {
-            border-top-right-radius: 12px;
-        }
-
-        .bundle-table tr:last-child td:first-child {
-            border-bottom-left-radius: 12px;
-        }
-
-        .bundle-table tr:last-child td:last-child {
-            border-bottom-right-radius: 12px;
-        }
-
-        .video-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
         }
 
         .video-container {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            background: var(--background-light);
+            aspect-ratio: 16/9;
         }
 
-        .video-container video {
-            width: 100%;
-            height: auto;
-            display: block;
+        .star-rating {
+            color: #FFD700;
         }
 
-        .related-products {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .related-products h2 {
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            color: #1f2937;
-        }
-
-        .related-products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .related-product {
-            border-radius: 16px;
-            overflow: hidden;
-            background: white;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        .related-product:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .related-product img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .related-product-info {
-            padding: 1.5rem;
-        }
-
-        .related-product-info h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .stock-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: #ecfdf5;
-            color: var(--success-green);
-            border-radius: 8px;
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 1024px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .product-gallery {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .action-buttons {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-view-cart {
-                grid-column: span 1;
-            }
-
-            .rating-price-container {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .price-container {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .product-title {
-                font-size: 2rem;
-            }
-
-            .expandable-header {
-                padding: 1rem;
-            }
-
-            .expandable-content {
-                padding: 1rem;
-            }
-
-            .bundle-table {
-                font-size: 0.9rem;
-            }
-
-            .bundle-table th,
-            .bundle-table td {
-                padding: 0.75rem;
-            }
+        .shipping-icon {
+            color: #4F46E5;
         }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <nav class="navigation-breadcrumb">
-            <a href="/shop" class="back-button">
-                <i class="fas fa-arrow-left"></i> Back to Shop
-            </a>
-        </nav>
+<body class="bg-gray-50">
+    <!-- Back to Shop Button -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <a href="/shop" class="inline-flex items-center text-gray-600 hover:text-gray-900">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Shop
+        </a>
+    </div>
 
-        <div class="product-grid">
-            <div class="product-gallery">
-                <div class="product-image-container">
-                    <img id="product-image" class="product-image"
-                        src="{{ asset('storage/' . $product->images->first()->image_path) }}"
-                        alt="{{ $product->name }}">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column - Images & Videos -->
+            <div class="space-y-6">
+                <!-- Main Image -->
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img id="product-image" src="{{ asset('storage/' . $product->images->first()->image_path) }}"
+                        alt="{{ $product->name }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
 
-                <div class="color-selection">
+                <!-- Thumbnail Images -->
+                <div class="grid grid-cols-5 gap-2">
                     @foreach ($product->images as $image)
-                        <button class="color-btn" data-color="{{ $image->color }}"
+                        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Product thumbnail"
+                            class="thumbnail-image w-full h-20 object-cover rounded-lg shadow cursor-pointer"
                             onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
-                            <span class="color-dot" style="background-color: {{ $image->color }};"></span>
-                            {{ ucfirst($image->color) }}
-                        </button>
                     @endforeach
                 </div>
 
+                <!-- Shipping Information -->
+                <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
+                    <h3 class="text-lg font-semibold flex items-center">
+                        <svg class="w-6 h-6 mr-2 shipping-icon" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                        Shipping Information
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm">
+                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            Processing Time: 2 - 3 business days
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            Transit Time: 2 - 7 business days
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Gallery -->
                 <div class="video-gallery">
                     @foreach ($product->videos as $video)
                         <div class="video-container">
@@ -506,148 +105,167 @@
                 </div>
             </div>
 
-            <div class="product-details">
-                <div class="product-header">
-                    <h1 class="product-title">{{ $product->name }}</h1>
-                    <p class="product-description">{{ $product->description }}</p>
+            <!-- Right Column - Product Details -->
+            <div class="space-y-6">
+                <h1 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h1>
 
-                    <div class="rating-price-container">
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-number">4.8 (256 reviews)</span>
-                        </div>
-                        <div class="price-container">
-                            <span class="original-price">KES{{ number_format($product->price, 2) }}</span>
-                            <span class="slashed-price">KES{{ number_format($product->slashed_price, 2) }}</span>
-                        </div>
+                <!-- Rating Section -->
+                <div class="flex items-center space-x-2">
+                    <div class="star-rating text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
+                    <span class="text-gray-600">(4.9/5 - 256 Reviews)</span>
+                </div>
 
-                    <div class="stock-status">
-                        <i class="fas fa-check-circle"></i>
-                        In Stock
+                <!-- Color Selection -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-medium">Select Color</h3>
+                    <div class="flex flex-wrap gap-3">
+                        @foreach ($product->images as $image)
+                            <button
+                                class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
+                                data-color="{{ $image->color }}"
+                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
+                                <span class="w-4 h-4 rounded-full" style="background-color: {{ $image->color }}"></span>
+                                <span>{{ ucfirst($image->color) }}</span>
+                            </button>
+                        @endforeach
                     </div>
                 </div>
-                <!-- Add to Cart Form -->
+
+                <!-- Price Section -->
+                <div class="flex items-center space-x-4">
+                    @if ($product->slashed_price)
+                        <span class="text-gray-500 line-through text-2xl">KES
+                            {{ number_format($product->slashed_price, 2) }}</span>
+                        <span class="text-3xl font-bold text-red-600">KES
+                            {{ number_format($product->price, 2) }}</span>
+                        <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">
+                            Save
+                            {{ round((($product->slashed_price - $product->price) / $product->slashed_price) * 100) }}%
+                        </span>
+                    @else
+                        <span class="text-3xl font-bold text-gray-900">KES
+                            {{ number_format($product->price, 2) }}</span>
+                    @endif
+                </div>
+
                 @if (session('success'))
                     <div class="alert alert-success" style="background-color: #28a745; color: white;">
                         {{ session('success') }}
                     </div>
                 @endif
-                <div class="action-buttons">
-                    <button class="btn btn-whatsapp" onclick="orderViaWhatsApp()">
-                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                <!-- Action Buttons -->
+                <div class="flex flex-col space-y-3">
+                    <button onclick="orderViaWhatsApp()"
+                        class="flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Order via WhatsApp</span>
                     </button>
 
-
-
-                    <form action="{{ route('add.to.cart') }}" method="POST">
+                    <form action="{{ route('add.to.cart') }}" method="POST" class="w-full">
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                        <button class="btn btn-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <button type="submit"
+                            class="w-full flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span>Add to Cart</span>
                         </button>
                     </form>
 
-
-
-                    <a href="{{ route('cart') }}" class="btn btn-view-cart">
-                        <i class="fas fa-shopping-bag"></i> View Cart
+                    <a href="{{ route('cart') }}"
+                        class="flex items-center justify-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span>View Cart</span>
                     </a>
                 </div>
 
-                <div class="info-sections">
-                    <div class="expandable-section">
-                        <div class="expandable-header" onclick="toggleSection(this)">
-                            <h4>Design Description</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="expandable-content">
-                            <p>{{ $product->design_description }}</p>
-                        </div>
+                <!-- Product Information -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Product Description</h3>
+                        <p class="text-gray-600">{{ $product->description }}</p>
                     </div>
 
-                    <div class="expandable-section">
-                        <div class="expandable-header" onclick="toggleSection(this)">
-                            <h4>Features</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="expandable-content">
-                            <p>{{ $product->features }}</p>
-                        </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Design Details</h3>
+                        <p class="text-gray-600">{{ $product->design_description }}</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Features</h3>
+                        <p class="text-gray-600">{{ $product->features }}</p>
                     </div>
                 </div>
-
-                <div style="padding: 20px; font-family: Arial, sans-serif; text-align: center;">
-                    <h2 style="font-size: 24px; color: #6D4E91; border-bottom: 1px solid #DDD; padding-bottom: 10px;">
-                        Bundle & Save</h2>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
-                        @for ($quantity = 1; $quantity <= 4; $quantity++)
-                            @php
-                                $originalPrice = $product->price * $quantity;
-                                $bundlePrice = $product->slashed_price
-                                    ? $product->slashed_price * $quantity
-                                    : $originalPrice;
-                                $savings = $originalPrice - $bundlePrice;
-                                $isMostPopular = $quantity === 2;
-                            @endphp
-                            <div
-                                style="
-                border: 1px solid #DDD;
-                border-radius: 8px;
-                padding: 15px;
-                width: 200px;
-                text-align: center;
-                background-color: {{ $isMostPopular ? '#F3E9FF' : '#FFF' }};
-                box-shadow: {{ $isMostPopular ? '0 0 10px rgba(109, 78, 145, 0.2)' : 'none' }};
-            ">
-                                <h3 style="font-size: 18px; color: #6D4E91; margin-bottom: 10px;">
-                                    Buy {{ $quantity }}
-                                </h3>
-                                @if ($isMostPopular)
-                                    <span style="font-size: 12px; color: #6D4E91; font-weight: bold;">Most
-                                        Popular</span>
-                                @endif
-                                <p style="font-size: 14px; color: #333; margin: 10px 0;">
-                                    You save <span
-                                        style="color: #0A8754; font-weight: bold;">KSh{{ number_format($savings, 2) }}</span>
-                                </p>
-                                <p style="font-size: 16px; color: #333; font-weight: bold; margin: 5px 0;">
-                                    KSh{{ number_format($bundlePrice, 2) }}
-                                </p>
-                                <p style="font-size: 12px; color: #999; text-decoration: line-through;">
-                                    KSh{{ number_format($originalPrice, 2) }}
-                                </p>
-                            </div>
-                        @endfor
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <div class="related-products">
-            <h2>Products You Might Like</h2>
-            <div class="related-products-grid">
-                @foreach ($relatedProducts as $relatedProduct)
-                    <button class="related-product"
-                        onclick="window.location.href='{{ route('product.show', $relatedProduct->id) }}'">
-                        <img src="{{ asset('storage/' . $relatedProduct->images->first()->image_path) }}"
-                            alt="{{ $relatedProduct->name }}">
-                        <div class="related-product-info">
-                            <h3>{{ $relatedProduct->name }}</h3>
-                            <p class="price">KES {{ number_format($relatedProduct->price, 2) }}</p>
+        <!-- Bundle and Save Section -->
+        <div class="mt-16 bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Bundle and Save</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @for ($quantity = 1; $quantity <= 4; $quantity++)
+                    @php
+                        // Reversing the logic: slashed_price is the original price, price is the discounted price
+                        $originalPrice = $product->slashed_price * $quantity;
+                        $bundlePrice = $product->price * $quantity;
+                        $savings = $originalPrice - $bundlePrice;
+                        $isMostPopular = $quantity === 2;
+                    @endphp
+                    <div
+                        class="relative p-6 border rounded-lg {{ $isMostPopular ? 'border-blue-500 bg-blue-50' : 'border-gray-200' }}">
+                        @if ($isMostPopular)
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Most Popular</span>
+                            </div>
+                        @endif
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-2">Buy {{ $quantity }}</h3>
+                            <p class="text-gray-500 line-through">KES {{ number_format($originalPrice, 2) }}</p>
+                            <p class="text-2xl font-bold text-gray-900 mb-2">KES {{ number_format($bundlePrice, 2) }}
+                            </p>
+                            @if ($savings > 0)
+                                <p class="text-green-600 text-sm">Save KES {{ number_format($savings, 2) }}</p>
+                            @endif
                         </div>
-                    </button>
+                    </div>
+                @endfor
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6">Products You Might Like</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                @foreach ($relatedProducts as $relatedProduct)
+                    <a href="{{ route('products.show', $relatedProduct->id) }}"
+                        class="group bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="{{ asset('storage/' . $relatedProduct->images->first()->image_path) }}"
+                                alt="{{ $relatedProduct->name }}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600">
+                                {{ $relatedProduct->name }}
+                            </h3>
+                            <p class="mt-1 text-lg font-bold text-gray-900">
+                                KES {{ number_format($relatedProduct->price, 2) }}
+                            </p>
+                        </div>
+                    </a>
                 @endforeach
             </div>
         </div>
-
     </div>
 
     <script>

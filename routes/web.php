@@ -7,6 +7,8 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 
 
 
@@ -120,3 +122,12 @@ Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.s
 Route::resource('products', ProductController::class);
 Route::put('/cart/update/{productId}', [CartController::class, 'updateQuantity'])->name('update.cart');
 Route::delete('/cart/remove/{productId}', [CartController::class, 'removeFromCart'])->name('remove.from.cart');
+
+// Checkout routes
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
+// Admin order management
+Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
+Route::get('/admin/orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+Route::put('/admin/orders/{order}', [OrderController::class, 'update'])->name('admin.orders.update');

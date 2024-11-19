@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'address',
+        'note',
+        'total',
+        'status',
+    ];
+
+    // Relationship with OrderProduct
+    public function orderProducts()
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
 }

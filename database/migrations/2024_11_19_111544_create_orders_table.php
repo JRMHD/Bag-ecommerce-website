@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
@@ -18,20 +18,11 @@ return new class extends Migration
             $table->string('phone');
             $table->text('address');
             $table->text('note')->nullable();
-            $table->decimal('total', 8, 2);
-            $table->timestamps();
-        });
-
-        Schema::create('order_product', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->integer('quantity');
-            $table->decimal('price', 8, 2);
+            $table->decimal('total', 10, 2);
+            $table->string('status')->default('Pending'); // Pending, Processing, Completed
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.

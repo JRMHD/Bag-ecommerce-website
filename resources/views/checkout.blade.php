@@ -105,17 +105,296 @@
                 </ul>
             </div>
         </div>
-        <!-- breadcrumb end -->
 
-        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+
+            body {
+                background-color: #f8fafc;
+                color: #334155;
+                line-height: 1.6;
+            }
+
+            .checkout-container {
+                max-width: 1200px;
+                margin: 2rem auto;
+                padding: 0 1rem;
+                display: grid;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 2rem;
+            }
+
+            @media (max-width: 968px) {
+                .checkout-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                color: #1e293b;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 2px solid #e2e8f0;
+            }
+
+            .alert {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .alert-success {
+                background-color: #dcfce7;
+                color: #166534;
+                border: 1px solid #86efac;
+            }
+
+            .checkout-form {
+                background: white;
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: #475569;
+                font-weight: 500;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                transition: border-color 0.2s;
+            }
+
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #3b82f6;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            }
+
+            .order-summary {
+                background: white;
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 2rem;
+            }
+
+            .order-items {
+                list-style: none;
+                margin-bottom: 1.5rem;
+            }
+
+            .order-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .order-item:last-child {
+                border-bottom: none;
+            }
+
+            .order-item img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 0.5rem;
+            }
+
+            .item-details {
+                flex: 1;
+            }
+
+            .total {
+                font-size: 1.25rem;
+                color: #1e293b;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 2px solid #e2e8f0;
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 1rem;
+                background-color: #16a34a;
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                font-size: 1.125rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .submit-button:hover {
+                background-color: #15803d;
+            }
+
+            .trust-info {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                background-color: #f8fafc;
+                border-radius: 0.5rem;
+            }
+
+            .trust-points {
+                list-style: none;
+                margin-top: 1rem;
+            }
+
+            .trust-point {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 0.75rem;
+                color: #64748b;
+            }
+
+            .trust-point i {
+                color: #16a34a;
+            }
+
+            .delivery-note {
+                margin-top: 1rem;
+                padding: 1rem;
+                background-color: #fffbeb;
+                border-radius: 0.5rem;
+                font-size: 0.875rem;
+                color: #92400e;
+            }
+        </style>
+
+        <!-- breadcrumb end -->
+        <div class="checkout-container">
+            <div class="checkout-main">
+                <h1 class="section-title">Secure Checkout</h1>
+
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <div class="checkout-form">
+                    <form action="{{ route('checkout.store') }}" method="POST">
+                        @csrf
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" name="phone" required placeholder="e.g., +254 XXX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Delivery Address</label>
+                            <textarea name="address" required rows="3" placeholder="Enter your complete delivery address"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Order Notes (Optional)</label>
+                            <textarea name="note" rows="2" placeholder="Any special instructions for delivery"></textarea>
+                        </div>
+
+                        <div class="trust-info">
+                            <h4>Why Shop with Imuz.co.ke?</h4>
+                            <ul class="trust-points">
+                                <li class="trust-point">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Fast delivery within 24-48 hours</span>
+                                </li>
+                                <li class="trust-point">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>Convenient pay on delivery option</span>
+                                </li>
+                                <li class="trust-point">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Easy returns within 7 days</span>
+                                </li>
+                                <li class="trust-point">
+                                    <i class="fas fa-headset"></i>
+                                    <span>24/7 customer support</span>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h2 class="section-title">Order Summary</h2>
+                <ul class="order-items">
+                    @foreach ($cart as $item)
+                        <li class="order-item">
+                            <img src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
+                            <div class="item-details">
+                                <h4>{{ $item['name'] }}</h4>
+                                <p>Quantity: {{ $item['quantity'] }}</p>
+                                <p>KES {{ number_format($item['price'], 2) }}</p>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+
+                <div class="total">
+                    <p>Total Amount: KES {{ number_format($total, 2) }}</p>
+                </div>
+
+                <div class="delivery-note">
+                    <i class="fas fa-info-circle"></i>
+                    Free delivery for orders above KES 5,000 within Nairobi
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-lock"></i>
+                    Place Order Securely
+                </button>
+                </form>
+            </div>
+        </div>
+
         <!-- footer start -->
         @include('footer')
         <!-- footer end -->
 
         <!-- scrollup start -->
         <button id="scrollup">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="18 15 12 9 6 15"></polyline>
             </svg>
         </button>
