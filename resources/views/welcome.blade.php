@@ -131,12 +131,12 @@
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Discover Affordable
+                                        Discover Affordable Premium Travel Bags
                                     </p>
-                                    <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
+                                    {{-- <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
                                         Premium Travel Bags
-                                    </h2>
+                                    </h2> --}}
                                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
@@ -152,12 +152,12 @@
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Pay on Delivery
+                                        Pay on Delivery Anywhere in Kenya
                                     </p>
-                                    <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
+                                    {{-- <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
                                         Anywhere in Kenya
-                                    </h2>
+                                    </h2> --}}
                                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
@@ -179,8 +179,8 @@
                                         data-animation="animate__animated animate__fadeInUp">
                                         Unbeatable Prices
                                     </h2>
-                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                                        href="shop" data-animation="animate__animated animate__fadeInUp">SHOP
+                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
+                                        data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
                                 </div>
                             </div>
@@ -218,23 +218,26 @@
             </section>
 
 
-            <section style="display: flex; align-items: center; justify-content: space-between; padding: 20px; font-family: Arial, sans-serif;">
-    <!-- Video 1 Section -->
-    <div style="flex: 1; margin-right: 20px; max-width: 100%;">
-        <video autoplay muted loop style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
-            <source src="\assets\VIDEOMAGES\video 1 use.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+            <section
+                style="display: flex; align-items: center; justify-content: space-between; padding: 20px; font-family: Arial, sans-serif;">
+                <!-- Video 1 Section -->
+                <div style="flex: 1; margin-right: 20px; max-width: 100%;">
+                    <video autoplay muted loop
+                        style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+                        <source src="\assets\VIDEOMAGES\video 1 use.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
-    <!-- Video 2 Section -->
-    <div style="flex: 1; margin-left: 20px; max-width: 100%;">
-        <video autoplay muted loop style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
-            <source src="\assets\VIDEOMAGES\video 2 use.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</section>
+                <!-- Video 2 Section -->
+                <div style="flex: 1; margin-left: 20px; max-width: 100%;">
+                    <video autoplay muted loop
+                        style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+                        <source src="\assets\VIDEOMAGES\video 2 use.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
 
 
             <!-- Responsive Styles -->
@@ -395,6 +398,65 @@
                     </div>
                 </div>
             </section>
+            <style>
+                /* General Table Styles */
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    font-size: 16px;
+                    text-align: left;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+
+                /* Table Row Styles */
+                table tr {
+                    background-color: #f7f7f7;
+                }
+
+                table td,
+                table th {
+                    padding: 10px 20px;
+                    border: 1px solid #ddd;
+                }
+
+                table th {
+                    background-color: #f7f7f7;
+                    color: #333;
+                }
+
+                /* Styles for Mobile Devices */
+                @media (max-width: 768px) {
+                    table {
+                        font-size: 14px;
+                        /* Reduce font size for better fit */
+                    }
+
+                    table td,
+                    table th {
+                        padding: 8px 12px;
+                        /* Adjust padding */
+                    }
+
+                    table tr {
+                        display: flex;
+                        flex-direction: column;
+                        /* Make rows stack vertically */
+                    }
+
+                    table td,
+                    table th {
+                        text-align: left;
+                        /* Keep text alignment */
+                    }
+
+                    table th:first-child,
+                    table td:first-child {
+                        font-weight: bold;
+                        background-color: #f7f7f7;
+                        /* Highlight the first column */
+                    }
+                }
+            </style>
 
             <!-- Responsive Styles -->
             <style>
