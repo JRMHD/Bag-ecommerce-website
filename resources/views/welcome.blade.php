@@ -193,219 +193,605 @@
             <!-- slideshow end -->
 
             <!-- banner start -->
-            <div class="banner-section mt-100 overflow-hidden">
-                <div class="banner-section-inner">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-right" data-aos-duration="1200">
-                                <a class="banner-item position-relative rounded" href="shop">
-                                    <img class="banner-img" src="assets/img/banner/bag-1.jpg" alt="banner-1">
-                                    <div class="content-absolute content-slide">
-                                        <div class="container height-inherit d-flex align-items-center">
-                                            <div class="content-box banner-content p-4">
-                                                <p class="heading_18 mb-3">Stylish Mini Backpacks</p>
-                                                <h2 class="heading_34">Save 25% on All Bags</h2>
-                                                <p class="heading_18 mt-3">Perfect for everyday travel. Shop now!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12" data-aos="fade-left" data-aos-duration="1200">
-                                <a class="banner-item position-relative rounded" href="shop">
-                                    <img class="banner-img" src="assets/img/banner/bag-2.jpg" alt="banner-2">
-                                    <div class="content-absolute content-slide">
-                                        <div class="container height-inherit d-flex align-items-center">
-                                            <div class="content-box banner-content p-4">
-                                                <p class="heading_18 mb-3">Limited Time Offer</p>
-                                                <h2 class="heading_34">25% off Women's Bags</h2>
-                                                <p class="heading_18 mt-3">Find the perfect fit for your travels!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <section
+                style="display: flex; align-items: center; justify-content: space-between; padding: 20px; font-family: Arial, sans-serif;">
+                <!-- Video Section -->
+                <div style="flex: 1; margin-right: 20px; max-width: 100%;">
+                    <video autoplay muted loop
+                        style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+                        <source src="\assets\img\imuz video 1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-            </div>
+
+                <!-- Text Content -->
+                <div style="flex: 1; text-align: left; padding-left: 20px;">
+                    <h2 style="margin-bottom: 10px; font-size: 24px; font-weight: bold; color: #333;">Say No! To Bag
+                        Checks</h2>
+                    <p style="font-size: 16px; line-height: 1.5; color: #666;">
+                        Say goodbye to the struggle of cramming everything into a suitcase! Experience
+                        <span style="font-weight: bold;">hassle-free organization</span> and
+                        <span style="font-weight: bold;">wrinkle-free</span> convenience with our stylish,
+                        <span style="font-weight: bold;">multi-functional</span> bag!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Responsive Styles -->
+            <style>
+                /* Default desktop styles */
+                @media (max-width: 1024px) {
+                    section {
+                        flex-direction: row;
+                    }
+
+                    .video-section {
+                        max-width: 600px;
+                    }
+
+                    .text-section {
+                        padding-left: 20px;
+                    }
+                }
+
+                /* For tablets and mobile devices */
+                @media (max-width: 768px) {
+                    section {
+                        flex-direction: column;
+                        /* Stack content vertically on smaller screens */
+                        text-align: center;
+                    }
+
+                    .video-section {
+                        margin-right: 0;
+                        margin-bottom: 20px;
+                    }
+
+                    .text-section {
+                        padding-left: 0;
+                        padding-right: 0;
+                        text-align: center;
+                    }
+
+                    h2 {
+                        font-size: 20px;
+                        /* Adjust font size for smaller screens */
+                    }
+
+                    p {
+                        font-size: 14px;
+                        /* Adjust text size for better readability on mobile */
+                    }
+                }
+
+                /* For very small screens (extra small mobile phones) */
+                @media (max-width: 480px) {
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+
+                    video {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            </style>
+
 
             <!-- banner end -->
 
 
             <!-- shop by category start -->
-            <div class="shop-category mt-100 overflow-hidden">
-                <div class="collection-tab-inner">
-                    <div class="container">
-                        <div class="section-header text-center">
-                            <h2 class="section-heading">Shop By Category</h2>
-                        </div>
-                        <div class="grid-container shop-category-inner">
-                            <!-- Category 1: New Arrivals (Women Beautiful Handbag) -->
-                            <a class="grid-item grid-item-1 position-relative rounded mt-0 d-flex" href="shop">
-                                <img class="banner-img" src="assets/img/banner/bag-3.jpg"
-                                    alt="Women Beautiful Handbag">
-                                <div class="content-absolute content-slide">
-                                    <div class="container height-inherit d-flex">
-                                        <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Fresh New Arrivals</p>
-                                            <h2 class="heading_18">Stylish Women's Handbags</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+            <section
+                style="padding: 40px; font-family: Arial, sans-serif; text-align: center; background-color: #fff;">
+                <!-- Top Section -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
+                    <div style="flex: 1; max-width: 45%; text-align: left;">
+                        <h1 style="font-size: 36px; font-weight: bold; color: #333;">IMUZ BAGS™</h1>
+                        <p style="font-size: 16px; color: #666; margin: 10px 0;">Simplifying Travel One Journey at a
+                            Time</p>
+                        <a href="shop" style="text-decoration: none;">
+                            <button
+                                style="background-color: #F76C6A; color: #fff; padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                                SHOP NOW
+                            </button>
+                        </a>
+                    </div>
 
-                            <!-- Category 2: New Arrivals (Bag Bouquet) -->
-                            <a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="shop">
-                                <img class="banner-img" src="assets/img/banner/bag-4.jpg" alt="Bag Bouquet">
-                                <div class="content-absolute content-slide">
-                                    <div class="container height-inherit d-flex">
-                                        <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Latest Collections</p>
-                                            <h2 class="heading_18">Charming Bag Bouquet</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Category 3: Quality Product (Leather Collection) -->
-                            <a class="grid-item grid-item-3 position-relative rounded mt-0 d-flex" href="shop">
-                                <img class="banner-img" src="assets/img/banner/bag-5.jpg" alt="Leather Collection">
-                                <div class="content-absolute content-slide">
-                                    <div class="container height-inherit d-flex justify-content-end text-end">
-                                        <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Top-Quality Leather</p>
-                                            <h2 class="heading_18">Premium Leather Bags</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Category 4: New Arrivals (Office Carrier) -->
-                            <a class="grid-item grid-item-4 position-relative rounded mt-0 d-flex" href="shop">
-                                <img class="banner-img" src="assets/img/banner/bag-6.jpg" alt="Office Carrier">
-                                <div class="content-absolute content-slide">
-                                    <div class="container height-inherit d-flex">
-                                        <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Ideal for Work</p>
-                                            <h2 class="heading_18">Office Carrier Bags</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Category 5: New Arrivals (Travel Bags) -->
-                            <a class="grid-item grid-item-5 position-relative rounded mt-0 d-flex" href="shop">
-                                <img class="banner-img" src="assets/img/banner/bag-7.jpg" alt="Travel Bags">
-                                <div class="content-absolute content-slide">
-                                    <div class="container height-inherit d-flex">
-                                        <div class="content-box banner-content p-4">
-                                            <p class="heading_16 m-0 primary-color">Explore the World</p>
-                                            <h2 class="heading_18">Durable Travel Bags</h2>
-                                            <span class="text_12 mt-2 link-underline d-block">SHOP COLLECTION</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <!-- Comparison Table -->
+                    <div style="flex: 1; max-width: 45%; overflow-x: auto; margin-top: 20px;">
+                        <table
+                            style="border-collapse: collapse; width: 100%; font-size: 16px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <tr style="background-color: #f7f7f7;">
+                                <th style="padding: 10px 20px; color: #333;">&nbsp;</th>
+                                <th style="padding: 10px 20px; color: #333;">IMUZ BAGS</th>
+                                <th style="padding: 10px 20px; color: #333;">Others</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 20px; border: 1px solid #ddd;">2-in-1 Design</td>
+                                <td
+                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Water-Resistant</td>
+                                <td
+                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Structured Storage</td>
+                                <td
+                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Spacious Interior</td>
+                                <td
+                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </div>
-            <!-- shop by category end -->
 
-
-
-
-            <!-- instagram start -->
-            <div class="instagram-section mt-100 overflow-hidden home-section">
-                <div class="instagram-inner">
-                    <div class="container">
-                        <div class="section-header text-center">
-                            <div class="section-icon">
-                                <svg width="54" height="54" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.99998 2.62165C12.4031 2.62165 12.6877 2.6308 13.6367 2.6741C14.5142 2.71415 14.9908 2.86077 15.3079 2.98398C15.728 3.14725 16.0278 3.34231 16.3428 3.65723C16.6577 3.97215 16.8528 4.272 17.016 4.69206C17.1392 5.00923 17.2859 5.48577 17.3259 6.36323C17.3692 7.31228 17.3783 7.5969 17.3783 10C17.3783 12.4031 17.3692 12.6878 17.3259 13.6368C17.2859 14.5143 17.1392 14.9908 17.016 15.308C16.8528 15.728 16.6577 16.0279 16.3428 16.3428C16.0278 16.6577 15.728 16.8528 15.3079 17.016C14.9908 17.1393 14.5142 17.2859 13.6367 17.3259C12.6879 17.3692 12.4032 17.3784 9.99998 17.3784C7.59672 17.3784 7.3121 17.3692 6.36323 17.3259C5.48574 17.2859 5.00919 17.1393 4.69206 17.016C4.27196 16.8528 3.97212 16.6577 3.6572 16.3428C3.34227 16.0279 3.14721 15.728 2.98398 15.308C2.86073 14.9908 2.71411 14.5143 2.67406 13.6368C2.63076 12.6878 2.62162 12.4031 2.62162 10C2.62162 7.5969 2.63076 7.31228 2.67406 6.36326C2.71411 5.48577 2.86073 5.00923 2.98398 4.69206C3.14721 4.272 3.34227 3.97215 3.6572 3.65723C3.97212 3.34231 4.27196 3.14725 4.69206 2.98398C5.00919 2.86077 5.48574 2.71415 6.36319 2.6741C7.31224 2.6308 7.59687 2.62165 9.99998 2.62165ZM9.99998 1C7.55571 1 7.24926 1.01036 6.28931 1.05416C5.33133 1.09789 4.67712 1.25001 4.10462 1.47251C3.51279 1.70251 3.01088 2.01025 2.51055 2.51058C2.01021 3.01092 1.70247 3.51283 1.47247 4.10466C1.24997 4.67716 1.09785 5.33137 1.05412 6.28935C1.01032 7.24926 1 7.55575 1 10C1 12.4443 1.01032 12.7508 1.05412 13.7107C1.09785 14.6687 1.24997 15.3229 1.47247 15.8954C1.70247 16.4872 2.01021 16.9891 2.51055 17.4895C3.01088 17.9898 3.51279 18.2975 4.10462 18.5275C4.67712 18.75 5.33133 18.9021 6.28931 18.9459C7.24926 18.9897 7.55571 19 9.99998 19C12.4443 19 12.7507 18.9897 13.7107 18.9459C14.6686 18.9021 15.3228 18.75 15.8953 18.5275C16.4872 18.2975 16.9891 17.9898 17.4894 17.4895C17.9898 16.9891 18.2975 16.4872 18.5275 15.8954C18.75 15.3229 18.9021 14.6687 18.9458 13.7107C18.9896 12.7508 19 12.4443 19 10C19 7.55575 18.9896 7.24926 18.9458 6.28935C18.9021 5.33137 18.75 4.67716 18.5275 4.10466C18.2975 3.51283 17.9898 3.01092 17.4894 2.51058C16.9891 2.01025 16.4872 1.70251 15.8953 1.47251C15.3228 1.25001 14.6686 1.09789 13.7107 1.05416C12.7507 1.01036 12.4443 1 9.99998 1ZM9.99998 5.37838C7.44753 5.37838 5.37835 7.44757 5.37835 10C5.37835 12.5525 7.44753 14.6217 9.99998 14.6217C12.5524 14.6217 14.6216 12.5525 14.6216 10C14.6216 7.44757 12.5524 5.37838 9.99998 5.37838ZM9.99998 13C8.34314 13 6.99996 11.6569 6.99996 10C6.99996 8.34317 8.34314 7 9.99998 7C11.6568 7 13 8.34317 13 10C13 11.6569 11.6568 13 9.99998 13ZM15.8842 5.19579C15.8842 5.79226 15.4007 6.27581 14.8042 6.27581C14.2077 6.27581 13.7242 5.79226 13.7242 5.19579C13.7242 4.59931 14.2077 4.1158 14.8042 4.1158C15.4007 4.1158 15.8842 4.59931 15.8842 5.19579Z"
-                                        fill="#00234D" />
-                                </svg>
-                            </div>
-                            <h2 class="section-heading">Bag & Water Bottle Trends</h2>
-                            <p class="section-subheading">See how our customers style their Imuz Travel Bags and water
-                                bottles in everyday life.</p>
-                        </div>
-                        <div class="instagram-container position-relative mt-48">
-                            <div class="common-slider"
-                                data-slick='{
-                                "slidesToShow": 4, 
-                                "slidesToScroll": 1,
-                                "dots": false,
-                                "arrows": true,
-                                "responsive": [
-                                  {
-                                    "breakpoint": 1281,
-                                    "settings": {
-                                      "slidesToShow": 3
-                                    }
-                                  },
-                                  {
-                                    "breakpoint": 768,
-                                    "settings": {
-                                      "slidesToShow": 2
-                                    }
-                                  }
-                                ]
-                            }'>
-                                <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
-                                            <img src="assets/img/instagram/bag1.jpg" alt="img"
-                                                class="instagram-card-img rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
-                                            <img src="assets/img/instagram/bag2.jpg" alt="img"
-                                                class="instagram-card-img rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
-                                            <img src="assets/img/instagram/bag3.jpg" alt="img"
-                                                class="instagram-card-img rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
-                                            <img src="assets/img/instagram/bag4.jpg" alt="img"
-                                                class="instagram-card-img rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="instagram-slick-item" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="instagram-card">
-                                        <a class="instagram-img-wrapper" href="https://www.instagram.com/">
-                                            <img src="assets/img/instagram/bag2.jpg" alt="img"
-                                                class="instagram-card-img rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="activate-arrows show-arrows-always article-arrows arrows-white"></div>
-                        </div>
+                <!-- Features Section -->
+                <div
+                    style="display: flex; justify-content: space-around; text-align: center; margin-top: 40px; flex-wrap: wrap;">
+                    <!-- Feature 1 -->
+                    <div style="flex: 1; max-width: 200px; margin: 10px;">
+                        <div style="font-size: 32px; color: #F76C6A;">✈️</div>
+                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">TSA Approved</h3>
+                        <p style="font-size: 14px; color: #666;">Carry-on champion and breeze through check-in.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div style="flex: 1; max-width: 200px; margin: 10px;">
+                        <div style="font-size: 32px; color: #F76C6A;">🌊</div>
+                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Premium Quality</h3>
+                        <p style="font-size: 14px; color: #666;">Durable, water-resistant, and versatile.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div style="flex: 1; max-width: 200px; margin: 10px;">
+                        <div style="font-size: 32px; color: #F76C6A;">🔒</div>
+                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Simplify Packing</h3>
+                        <p style="font-size: 14px; color: #666;">Fit all of your clothes and essentials, stress-free.
+                        </p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div style="flex: 1; max-width: 200px; margin: 10px;">
+                        <div style="font-size: 32px; color: #F76C6A;">👕</div>
+                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Wrinkle-Free</h3>
+                        <p style="font-size: 14px; color: #666;">Maintain your clothes in crisp and pristine condition.
+                        </p>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Responsive Styles -->
+            <style>
+                /* For Tablets and Smaller Devices */
+                @media (max-width: 1024px) {
+                    section {
+                        padding: 20px;
+                    }
+
+                    /* For smaller tablets and mobile screens */
+                    .top-section,
+                    .comparison-table {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .comparison-table {
+                        width: 100%;
+                    }
+
+                    .feature {
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    button {
+                        font-size: 14px;
+                        padding: 10px 20px;
+                    }
+
+                    h1 {
+                        font-size: 28px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    /* Make sure the table is horizontally scrollable on small screens */
+                    table {
+                        width: 100%;
+                        overflow-x: auto;
+                        display: block;
+                    }
+
+                    .table-container {
+                        overflow-x: auto;
+                    }
+                }
+
+                /* For Mobile Devices */
+                @media (max-width: 768px) {
+                    section {
+                        padding: 20px;
+                    }
+
+                    .top-section,
+                    .comparison-table {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .comparison-table {
+                        width: 100%;
+                        overflow-x: auto;
+                    }
+
+                    .feature {
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    button {
+                        font-size: 14px;
+                        padding: 10px 20px;
+                    }
+
+                    h1 {
+                        font-size: 24px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            </style>
+
             <!-- instagram end -->
+
+            <!-- Add this section before the related-section -->
+            <section class="reviews-section">
+                <div class="reviews-header">
+                    <h2 class="reviews-title">Customer Reviews</h2>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-text">4.8 out of 5</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AO</div>
+                        <div>
+                            <div class="reviewer-name">Aisha Omar</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">2 days ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Mashallah! The quality is exceptional and delivery was very quick. I
+                        received my order in Eastleigh within 24 hours. Will definitely order again!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JK</div>
+                        <div>
+                            <div class="reviewer-name">John Kamau</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Amazing product! The price is very fair considering the quality. Delivery
+                        to Westlands was smooth and the packaging was excellent.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">FH</div>
+                        <div>
+                            <div class="reviewer-name">Fatuma Hassan</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">The WhatsApp ordering process was very convenient. Customer service was
+                        excellent and very responsive. Product arrived in perfect condition to South C.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">WO</div>
+                        <div>
+                            <div class="reviewer-name">Wanjiku Odhiambo</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Great value for money! The product exceeded my expectations.
+                        Communication was clear throughout the delivery process to Kileleshwa.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AA</div>
+                        <div>
+                            <div class="reviewer-name">Abdi Ahmed</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">SubhanAllah, the quality is outstanding! Fast delivery to Pangani, and
+                        the WhatsApp communication was very clear. The product looks exactly like in the photos.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">MK</div>
+                        <div>
+                            <div class="reviewer-name">Muthoni Kariuki</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">I was hesitant about ordering via WhatsApp at first, but the process was
+                        super smooth! Delivery to Kilimani was quick, and the product is worth every shilling.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">YM</div>
+                        <div>
+                            <div class="reviewer-name">Yasmin Mohamed</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Alhamdulillah! Second time ordering and still impressed. The customer
+                        service is exceptional, and delivery to California Estate was prompt. Highly recommend!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RO</div>
+                        <div>
+                            <div class="reviewer-name">Reuben Omondi</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="review-date">2 months ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Very satisfied with my purchase! The packaging was secure and delivery to
+                        Umoja was faster than expected. Will definitely order again.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">HI</div>
+                        <div>
+                            <div class="reviewer-name">Hussein Ibrahim</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">Excellent service from start to finish! The WhatsApp ordering was
+                        convenient, and delivery to South B was well-coordinated. The product quality is top-notch.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">NK</div>
+                        <div>
+                            <div class="reviewer-name">Njeri Kimani</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="review-date">2 months ago</div>
+                        </div>
+                        <span class="verified-badge">
+                            <i class="fas fa-check"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                    <p class="review-content">The product arrived in perfect condition to Lavington. Customer support
+                        was very helpful and responsive on WhatsApp. Fair price for the quality received.</p>
+                </div>
+            </section>
+
+
+            <style>
+                /* New styles for reviews section */
+                .reviews-section {
+                    padding: 2rem 1rem;
+                    background: var(--bg-primary);
+                    margin-top: 2rem;
+                }
+
+                .reviews-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 1rem;
+                }
+
+                .reviews-title {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                }
+
+                .review-card {
+                    background: var(--bg-primary);
+                    border-radius: 16px;
+                    padding: 1.5rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    max-width: 1400px;
+                    margin: 1rem auto;
+                }
+
+                .reviewer-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .reviewer-avatar {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: var(--bg-secondary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    color: var(--primary-color);
+                }
+
+                .reviewer-name {
+                    font-weight: 600;
+                }
+
+                .review-date {
+                    color: var(--text-secondary);
+                    font-size: 0.9rem;
+                }
+
+                .review-content {
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    margin-top: 0.5rem;
+                }
+
+                .verified-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    padding: 0.25rem 0.5rem;
+                    background: #ecfdf5;
+                    color: #059669;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+            </style>
+
+
+
 
             <!-- faq start -->
             <div class="faq-section mt-100 overflow-hidden">

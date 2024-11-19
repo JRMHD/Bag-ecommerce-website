@@ -4,987 +4,697 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $product->name }} - Product Details</title>
+    <title>{{ $product->name }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <style>
+        :root {
+            --royal-blue: #2563eb;
+            --light-orange: #fb923c;
+            --text-gray: #4b5563;
+            --border-color: #e5e7eb;
+            --success-green: #10b981;
+            --background-light: #f8fafc;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-color: #3b82f6;
-            --text-primary: #1f2937;
-            --text-secondary: #64748b;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f1f5f9;
-        }
-
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-secondary);
-            color: var(--text-primary);
-            line-height: 1.5;
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #1f2937;
+            line-height: 1.6;
         }
 
-        .main-container {
-            max-width: 100vw;
-            min-height: 100vh;
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .navigation-breadcrumb {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
         }
 
-        .navigation {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 1rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .back-btn {
+        .back-button {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--bg-secondary);
-            color: var(--text-primary);
-            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--background-light);
+            color: var(--text-gray);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-
-        .back-btn:hover {
-            background-color: #e2e8f0;
-        }
-
-        .product-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            max-height: calc(100vh - 60px);
-            overflow-y: auto;
-        }
-
-        .product-container {
-            display: grid;
-            padding: 1rem;
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .image-gallery {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-primary);
-        }
-
-        .main-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .thumbnail-strip {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem;
             border-radius: 12px;
-            backdrop-filter: blur(8px);
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .thumbnail {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
+        .back-button:hover {
+            background-color: #e2e8f0;
+            transform: translateX(-4px);
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .product-image-container {
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--background-light);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
+        }
+
+        .color-selection {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: white;
             cursor: pointer;
-            object-fit: cover;
-            transition: all 0.2s ease;
-            opacity: 0.6;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
         }
 
-        .thumbnail.active {
-            opacity: 1;
-            transform: scale(1.1);
-            box-shadow: 0 0 0 2px var(--primary-color);
+        .color-btn:hover {
+            border-color: var(--royal-blue);
+            background: var(--background-light);
+            transform: translateY(-2px);
         }
 
-        .product-info {
+        .color-btn.active {
+            border-color: var(--royal-blue);
+            background: #eef2ff;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+        }
+
+        .product-details {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .product-header {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
         }
 
         .product-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .rating-container {
+        .product-description {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+
+        .rating-price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--background-light);
+            border-radius: 16px;
+        }
+
+        .rating {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .stars {
-            color: #fbbf24;
-            display: flex;
-            gap: 0.25rem;
+            color: var(--light-orange);
+            font-size: 1.25rem;
         }
 
-        .rating-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .price-section {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            background: var(--bg-secondary);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-
-        .current-price {
-            font-size: 1.5rem;
+        .rating-number {
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--text-gray);
+        }
+
+        .price-container {
+            text-align: right;
+        }
+
+        .original-price {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            text-decoration: line-through;
+            margin-right: 1rem;
         }
 
         .slashed-price {
-            color: var(--text-secondary);
-            text-decoration: line-through;
-            font-size: 1rem;
-        }
-
-        .product-meta {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .description {
-            line-height: 1.6;
-            color: var(--text-secondary);
+            font-size: 2rem;
+            color: var(--royal-blue);
+            font-weight: bold;
         }
 
         .action-buttons {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+            margin: 2rem 0;
         }
 
-        .primary-button {
-            padding: 1rem;
-            border: none;
+        .btn {
+            padding: 1.25rem 2rem;
             border-radius: 12px;
-            background: var(--primary-color);
-            color: white;
-            font-weight: 600;
+            border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
-        .primary-button:hover {
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-cart {
+            background: var(--royal-blue);
+            color: white;
+        }
+
+        .btn-view-cart {
+            background: white;
+            border: 2px solid var(--royal-blue);
+            color: var(--royal-blue);
+            grid-column: span 2;
+        }
+
+        .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            box-shadow: var(--shadow-lg);
         }
 
-        .secondary-button {
-            padding: 1rem;
-            border: 1px solid var(--primary-color);
-            border-radius: 12px;
-            background: transparent;
-            color: var(--primary-color);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .secondary-button:hover {
-            background: var(--bg-secondary);
-        }
-
-        .related-section {
-            padding: 2rem 1rem;
-            background: var(--bg-primary);
-        }
-
-        .related-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .related-grid {
-            display: grid;
+        .info-sections {
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            max-width: 1400px;
-            margin: 0 auto;
+            margin-top: 2rem;
         }
 
-        .product-card {
-            background: var(--bg-primary);
+        .expandable-section {
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: all 0.3s ease;
         }
 
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        .expandable-section:hover {
+            box-shadow: var(--shadow-sm);
         }
 
-        .card-image {
+        .expandable-header {
+            padding: 1.5rem;
+            background: var(--background-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .expandable-content {
+            padding: 1.5rem;
+            display: none;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .expandable-content.show {
+            display: block;
+        }
+
+        .bundle-and-save {
+            margin-top: 3rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .bundle-table {
             width: 100%;
-            aspect-ratio: 1;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+        }
+
+        .bundle-table th,
+        .bundle-table td {
+            padding: 1.25rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .bundle-table th {
+            background: var(--background-light);
+            font-weight: 600;
+        }
+
+        .bundle-table tr:first-child th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        .bundle-table tr:first-child th:last-child {
+            border-top-right-radius: 12px;
+        }
+
+        .bundle-table tr:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+
+        .bundle-table tr:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--background-light);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .related-products {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-products h2 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: #1f2937;
+        }
+
+        .related-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-product {
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .related-product:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-product img {
+            width: 100%;
+            height: 280px;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 1rem;
+        .related-product-info {
+            padding: 1.5rem;
         }
 
-        .card-title {
-            font-weight: 500;
+        .related-product-info h3 {
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
 
-        .card-price {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .card-button {
-            width: 100%;
-            padding: 0.75rem;
-            border: none;
+        .stock-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #ecfdf5;
+            color: var(--success-green);
             border-radius: 8px;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
             font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            margin-top: 1rem;
         }
 
-        .card-button:hover {
-            background: #e2e8f0;
-        }
-
-        @media (min-width: 768px) {
-            .product-container {
-                grid-template-columns: 1fr 1fr;
-                padding: 2rem;
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
+            .product-gallery {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-view-cart {
+                grid-column: span 1;
+            }
+
+            .rating-price-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .price-container {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
             .product-title {
                 font-size: 2rem;
             }
 
-            .thumbnail {
-                width: 60px;
-                height: 60px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .product-container {
-                padding: 3rem;
-                gap: 4rem;
+            .expandable-header {
+                padding: 1rem;
             }
 
-            .related-grid {
-                grid-template-columns: repeat(4, 1fr);
+            .expandable-content {
+                padding: 1rem;
             }
-        }
 
-        /* Custom scrollbar */
-        .product-section::-webkit-scrollbar {
-            width: 8px;
-        }
+            .bundle-table {
+                font-size: 0.9rem;
+            }
 
-        .product-section::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .product-section::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-        }
-
-        /* Animation for image change */
-        .main-image {
-            transition: opacity 0.3s ease;
-        }
-
-        .main-image.fade {
-            opacity: 0;
-        }
-
-
-        /* New styles for reviews section */
-        .reviews-section {
-            padding: 2rem 1rem;
-            background: var(--bg-primary);
-            margin-top: 2rem;
-        }
-
-        .reviews-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .reviews-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        .review-card {
-            background: var(--bg-primary);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            max-width: 1400px;
-            margin: 1rem auto;
-        }
-
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .reviewer-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .reviewer-name {
-            font-weight: 600;
-        }
-
-        .review-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .review-content {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-top: 0.5rem;
-        }
-
-        .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            background: #ecfdf5;
-            color: #059669;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .whatsapp-button {
-            padding: 1rem;
-            border: 1px solid #25D366;
-            border-radius: 12px;
-            background: #25D366;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .whatsapp-button:hover {
-            background: #128C7E;
-            border-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-        }
-
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            /* Green */
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 1000;
-            display: none;
-        }
-
-        .notification.error {
-            background-color: #f44336;
-            /* Red */
-        }
-
-        .bundle-save-section {
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-
-        .bundle-save-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #5a2d82;
-            /* Adjust to your theme color */
-        }
-
-        .bundle-options {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            flex-wrap: wrap;
-            /* Ensures responsiveness */
-        }
-
-        .bundle-option {
-            flex: 1;
-            min-width: 200px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-
-        .bundle-option .bundle-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .bundle-option .bundle-saving {
-            font-size: 14px;
-            color: #5a2d82;
-            /* Adjust for your branding */
-            margin: 5px 0;
-        }
-
-        .bundle-option .bundle-price {
-            font-size: 18px;
-            font-weight: bold;
-            color: #27ae60;
-            /* Highlight discount price */
-        }
-
-        .bundle-option .bundle-original-price {
-            font-size: 14px;
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .bundle-option.most-popular {
-            border: 2px solid #5a2d82;
-            /* Highlight popular option */
-            background: #faf3fc;
-        }
-
-        .bundle-option.most-popular .bundle-title {
-            color: #5a2d82;
+            .bundle-table th,
+            .bundle-table td {
+                padding: 0.75rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="main-container">
-        <nav class="navigation">
-            <a href="{{ route('shop') }}" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                Back to Shop
+    <div class="container">
+        <nav class="navigation-breadcrumb">
+            <a href="/shop" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Shop
             </a>
         </nav>
 
-        <main class="product-section">
-            <div class="product-container">
-                <div class="image-gallery">
-                    @if ($product->images)
-                        @php
-                            $images = json_decode($product->images);
-                            $mainImage = $images[0];
-                        @endphp
-                        <img src="{{ asset('storage/' . $mainImage) }}" alt="{{ $product->name }}" class="main-image"
-                            id="mainImage">
-
-                        <div class="thumbnail-strip">
-                            @foreach ($images as $index => $image)
-                                <img src="{{ asset('storage/' . $image) }}" alt="{{ $product->name }}"
-                                    class="thumbnail {{ $index === 0 ? 'active' : '' }}"
-                                    onclick="updateMainImage(this, '{{ asset('storage/' . $image) }}')">
-                            @endforeach
-                        </div>
-                    @endif
+        <div class="product-grid">
+            <div class="product-gallery">
+                <div class="product-image-container">
+                    <img id="product-image" class="product-image"
+                        src="{{ asset('storage/' . $product->images->first()->image_path) }}"
+                        alt="{{ $product->name }}">
                 </div>
 
-                <div class="product-info">
-                    <div class="product-header">
-                        <h1 class="product-title">{{ $product->name }}</h1>
-                        <div class="rating-container">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="rating-text">4.5 (128 reviews)</span>
-                        </div>
-                    </div>
-
-                    <div class="price-section">
-                        <span class="current-price">KES {{ number_format($product->price) }}</span>
-                        @if ($product->slashed_price)
-                            <span class="slashed-price">KES {{ number_format($product->slashed_price) }}</span>
-                        @endif
-                    </div>
-
-                    <div class="product-meta">
-                        <div class="meta-item">
-                            <i class="fas fa-palette"></i>
-                            <span>{{ $product->color }}</span>
-                        </div>
-                        <div class="meta-item">
-                            <i class="fas fa-box"></i>
-                            <span>In Stock</span>
-                        </div>
-                        <div class="meta-item">
-                            <i class="fas fa-truck"></i>
-                            <span>Fast Delivery</span>
-                        </div>
-                    </div>
-
-                    <p class="description">{{ $product->description }}</p>
-
-                    <div class="action-buttons">
-                        <button class="primary-button">
-                            <i class="fas fa-shopping-cart"></i>
-                            Add to Cart
+                <div class="color-selection">
+                    @foreach ($product->images as $image)
+                        <button class="color-btn" data-color="{{ $image->color }}"
+                            onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
+                            <span class="color-dot" style="background-color: {{ $image->color }};"></span>
+                            {{ ucfirst($image->color) }}
                         </button>
-                        <a href="https://wa.me/254769839595?text=Hello! I'm interested in ordering: %0A%0AProduct: {{ $product->name }}%0APrice: KES {{ number_format($product->price) }}%0A%0ACould you please assist me with the purchase?"
-                            class="whatsapp-button" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Order Via WhatsApp
-                        </a>
-                        <a href="/cart" class="whatsapp-button" target="_blank">
-                            <i class="fas fa-shopping-cart"></i>
-                            View Cart
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="bundle-save-section">
-                <h2 class="bundle-save-title">Bundle & Save</h2>
-                <div class="bundle-options">
-                    <div class="bundle-option">
-                        <span class="bundle-title">Buy 1</span>
-                        <span class="bundle-saving">You save KSh8,676.08</span>
-                        <span class="bundle-price">KSh8,413.16</span>
-                        <span class="bundle-original-price"><s>KSh17,089.24</s></span>
-                    </div>
-                    <div class="bundle-option most-popular">
-                        <span class="bundle-title">Buy 2</span>
-                        <span class="bundle-saving">You save KSh17,357.16</span>
-                        <span class="bundle-price">KSh16,821.32</span>
-                        <span class="bundle-original-price"><s>KSh34,178.48</s></span>
-                    </div>
-                    <div class="bundle-option">
-                        <span class="bundle-title">Buy 3</span>
-                        <span class="bundle-saving">You save KSh26,038.24</span>
-                        <span class="bundle-price">KSh25,229.48</span>
-                        <span class="bundle-original-price"><s>KSh51,267.72</s></span>
-                    </div>
-                    <div class="bundle-option">
-                        <span class="bundle-title">Buy 4</span>
-                        <span class="bundle-saving">You save KSh34,719.32</span>
-                        <span class="bundle-price">KSh33,637.64</span>
-                        <span class="bundle-original-price"><s>KSh68,356.96</s></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add this section before the related-section -->
-            <section class="reviews-section">
-                <div class="reviews-header">
-                    <h2 class="reviews-title">Customer Reviews</h2>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span class="rating-text">4.8 out of 5</span>
-                    </div>
+                    @endforeach
                 </div>
 
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">AO</div>
-                        <div>
-                            <div class="reviewer-name">Aisha Omar</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="review-date">2 days ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Mashallah! The quality is exceptional and delivery was very quick. I
-                        received my order in Eastleigh within 24 hours. Will definitely order again!</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">JK</div>
-                        <div>
-                            <div class="reviewer-name">John Kamau</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="review-date">1 week ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Amazing product! The price is very fair considering the quality. Delivery
-                        to Westlands was smooth and the packaging was excellent.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">FH</div>
-                        <div>
-                            <div class="reviewer-name">Fatuma Hassan</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="review-date">2 weeks ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">The WhatsApp ordering process was very convenient. Customer service was
-                        excellent and very responsive. Product arrived in perfect condition to South C.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">WO</div>
-                        <div>
-                            <div class="reviewer-name">Wanjiku Odhiambo</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="review-date">3 weeks ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Great value for money! The product exceeded my expectations.
-                        Communication was clear throughout the delivery process to Kileleshwa.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">AA</div>
-                        <div>
-                            <div class="reviewer-name">Abdi Ahmed</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="review-date">1 month ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">SubhanAllah, the quality is outstanding! Fast delivery to Pangani, and
-                        the WhatsApp communication was very clear. The product looks exactly like in the photos.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">MK</div>
-                        <div>
-                            <div class="reviewer-name">Muthoni Kariuki</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="review-date">3 weeks ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">I was hesitant about ordering via WhatsApp at first, but the process was
-                        super smooth! Delivery to Kilimani was quick, and the product is worth every shilling.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">YM</div>
-                        <div>
-                            <div class="reviewer-name">Yasmin Mohamed</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="review-date">1 month ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Alhamdulillah! Second time ordering and still impressed. The customer
-                        service is exceptional, and delivery to California Estate was prompt. Highly recommend!</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">RO</div>
-                        <div>
-                            <div class="reviewer-name">Reuben Omondi</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="review-date">2 months ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Very satisfied with my purchase! The packaging was secure and delivery to
-                        Umoja was faster than expected. Will definitely order again.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">HI</div>
-                        <div>
-                            <div class="reviewer-name">Hussein Ibrahim</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="review-date">1 month ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">Excellent service from start to finish! The WhatsApp ordering was
-                        convenient, and delivery to South B was well-coordinated. The product quality is top-notch.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">NK</div>
-                        <div>
-                            <div class="reviewer-name">Njeri Kimani</div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="review-date">2 months ago</div>
-                        </div>
-                        <span class="verified-badge">
-                            <i class="fas fa-check"></i>
-                            Verified Purchase
-                        </span>
-                    </div>
-                    <p class="review-content">The product arrived in perfect condition to Lavington. Customer support
-                        was very helpful and responsive on WhatsApp. Fair price for the quality received.</p>
-                </div>
-            </section>
-            <section class="related-section">
-                <h2 class="related-title">You Might Also Like</h2>
-                <div class="related-grid">
-                    @foreach ($products as $relatedProduct)
-                        <div class="product-card">
-                            <img src="{{ asset('storage/' . json_decode($relatedProduct->images)[0]) }}"
-                                alt="{{ $relatedProduct->name }}" class="card-image">
-                            <div class="card-content">
-                                <h3 class="card-title">{{ $relatedProduct->name }}</h3>
-                                <p class="card-price">KES {{ number_format($relatedProduct->price) }}</p>
-                                <a href="{{ route('product.show', $relatedProduct->id) }}" class="card-button">View
-                                    Details</a>
-                            </div>
+                <div class="video-gallery">
+                    @foreach ($product->videos as $video)
+                        <div class="video-container">
+                            <video autoplay muted loop>
+                                <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     @endforeach
                 </div>
-            </section>
-        </main>
+            </div>
+
+            <div class="product-details">
+                <div class="product-header">
+                    <h1 class="product-title">{{ $product->name }}</h1>
+                    <p class="product-description">{{ $product->description }}</p>
+
+                    <div class="rating-price-container">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-number">4.8 (256 reviews)</span>
+                        </div>
+                        <div class="price-container">
+                            <span class="original-price">KES{{ number_format($product->price, 2) }}</span>
+                            <span class="slashed-price">KES{{ number_format($product->slashed_price, 2) }}</span>
+                        </div>
+                    </div>
+
+                    <div class="stock-status">
+                        <i class="fas fa-check-circle"></i>
+                        In Stock
+                    </div>
+                </div>
+                <!-- Add to Cart Form -->
+                @if (session('success'))
+                    <div class="alert alert-success" style="background-color: #28a745; color: white;">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <div class="action-buttons">
+                    <button class="btn btn-whatsapp" onclick="orderViaWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </button>
+
+
+
+                    <form action="{{ route('add.to.cart') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <button class="btn btn-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </form>
+
+
+
+                    <a href="{{ route('cart') }}" class="btn btn-view-cart">
+                        <i class="fas fa-shopping-bag"></i> View Cart
+                    </a>
+                </div>
+
+                <div class="info-sections">
+                    <div class="expandable-section">
+                        <div class="expandable-header" onclick="toggleSection(this)">
+                            <h4>Design Description</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="expandable-content">
+                            <p>{{ $product->design_description }}</p>
+                        </div>
+                    </div>
+
+                    <div class="expandable-section">
+                        <div class="expandable-header" onclick="toggleSection(this)">
+                            <h4>Features</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="expandable-content">
+                            <p>{{ $product->features }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 20px; font-family: Arial, sans-serif; text-align: center;">
+                    <h2 style="font-size: 24px; color: #6D4E91; border-bottom: 1px solid #DDD; padding-bottom: 10px;">
+                        Bundle & Save</h2>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
+                        @for ($quantity = 1; $quantity <= 4; $quantity++)
+                            @php
+                                $originalPrice = $product->price * $quantity;
+                                $bundlePrice = $product->slashed_price
+                                    ? $product->slashed_price * $quantity
+                                    : $originalPrice;
+                                $savings = $originalPrice - $bundlePrice;
+                                $isMostPopular = $quantity === 2;
+                            @endphp
+                            <div
+                                style="
+                border: 1px solid #DDD;
+                border-radius: 8px;
+                padding: 15px;
+                width: 200px;
+                text-align: center;
+                background-color: {{ $isMostPopular ? '#F3E9FF' : '#FFF' }};
+                box-shadow: {{ $isMostPopular ? '0 0 10px rgba(109, 78, 145, 0.2)' : 'none' }};
+            ">
+                                <h3 style="font-size: 18px; color: #6D4E91; margin-bottom: 10px;">
+                                    Buy {{ $quantity }}
+                                </h3>
+                                @if ($isMostPopular)
+                                    <span style="font-size: 12px; color: #6D4E91; font-weight: bold;">Most
+                                        Popular</span>
+                                @endif
+                                <p style="font-size: 14px; color: #333; margin: 10px 0;">
+                                    You save <span
+                                        style="color: #0A8754; font-weight: bold;">KSh{{ number_format($savings, 2) }}</span>
+                                </p>
+                                <p style="font-size: 16px; color: #333; font-weight: bold; margin: 5px 0;">
+                                    KSh{{ number_format($bundlePrice, 2) }}
+                                </p>
+                                <p style="font-size: 12px; color: #999; text-decoration: line-through;">
+                                    KSh{{ number_format($originalPrice, 2) }}
+                                </p>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2>Products You Might Like</h2>
+            <div class="related-products-grid">
+                @foreach ($relatedProducts as $relatedProduct)
+                    <button class="related-product"
+                        onclick="window.location.href='{{ route('product.show', $relatedProduct->id) }}'">
+                        <img src="{{ asset('storage/' . $relatedProduct->images->first()->image_path) }}"
+                            alt="{{ $relatedProduct->name }}">
+                        <div class="related-product-info">
+                            <h3>{{ $relatedProduct->name }}</h3>
+                            <p class="price">KES {{ number_format($relatedProduct->price, 2) }}</p>
+                        </div>
+                    </button>
+                @endforeach
+            </div>
+        </div>
+
     </div>
 
     <script>
-        function updateMainImage(thumbnail, newSrc) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.classList.add('fade');
-
+        function changeImage(imageUrl) {
+            const img = document.getElementById('product-image');
+            img.style.opacity = '0';
             setTimeout(() => {
-                mainImage.src = newSrc;
-                mainImage.classList.remove('fade');
+                img.src = imageUrl;
+                img.style.opacity = '1';
             }, 300);
 
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            thumbnail.classList.add('active');
+            // Remove active class from all buttons
+            document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
         }
-    </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.primary-button').click(function(e) {
-                e.preventDefault();
+        function orderViaWhatsApp() {
+            const message = encodeURIComponent(`Hello, I would like to inquire about the product: {{ $product->name }}.`);
+            const phone = "+254745478277";
+            const url = `https://wa.me/${phone}?text=${message}`;
+            window.open(url, "_blank");
+        }
 
-                $.ajax({
-                    url: '{{ route('cart.add') }}',
-                    method: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        product_id: {{ $product->id }}
-                    },
-                    success: function(response) {
-                        showNotification(response.message);
-                    },
-                    error: function() {
-                        showNotification('Error adding product to cart!', true);
-                    }
-                });
-            });
+        function addToCart() {
+            const btn = event.currentTarget;
+            btn.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            btn.style.background = 'var(--success-green)';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                btn.style.background = 'var(--royal-blue)';
+            }, 2000);
+        }
 
-            function showNotification(message, isError = false) {
-                const notification = $('<div>')
-                    .addClass('notification')
-                    .toggleClass('error', isError)
-                    .text(message)
-                    .appendTo('body');
+        function toggleSection(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            content.classList.toggle('show');
+            icon.classList.toggle('fa-chevron-up');
+            icon.classList.toggle('fa-chevron-down');
+        }
 
-                notification.fadeIn();
+        // Set first color button as active
+        document.querySelector('.color-btn').classList.add('active');
 
-                setTimeout(() => {
-                    notification.fadeOut(() => notification.remove());
-                }, 3000);
-            }
-        });
+        // Add smooth fade-in effect for images
+        document.getElementById('product-image').style.transition = 'opacity 0.3s ease';
     </script>
 </body>
 

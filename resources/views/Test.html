@@ -1,0 +1,118 @@
+<div class="product-detail">
+    <h1>{{ $product->name }}</h1>
+    <h4>Description</h4>
+    <p>{{ $product->description }}</p>
+    <h4>Design Description</h4>
+    <p>{{ $product->design_description }}</p>
+    <h4>Features</h4>
+    <p>{{ $product->features }}</p>
+
+    <!-- Color Selection Buttons -->
+    <div class="color-selection">
+        @foreach ($product->images as $image)
+            <button data-color="{{ $image->color }}"
+                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
+                {{ ucfirst($image->color) }}
+            </button>
+        @endforeach
+    </div>
+
+    <!-- Main Product Image -->
+    <img id="product-image" src="{{ asset('storage/' . $product->images->first()->image_path) }}"
+        alt="{{ $product->name }}" style="max-width: 100%; height: auto;">
+
+    <!-- Product Videos -->
+    <div class="product-videos">
+        @foreach ($product->videos as $video)
+            <div class="video-container">
+                <video autoplay muted loop style="max-width: 100%; height: auto;">
+                    <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- Bundle and Save Section -->
+<div class="bundle-and-save">
+    <h2>Bundle and Save</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Original Price</th>
+                <th>Bundle Price</th>
+                <th>You Save</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for ($quantity = 1; $quantity <= 4; $quantity++)
+                @php
+                    $originalPrice = $product->price * $quantity;
+                    $bundlePrice = $product->slashed_price ? $product->slashed_price * $quantity : $originalPrice;
+                    $savings = $originalPrice - $bundlePrice;
+                @endphp
+                <tr>
+                    <td>
+                        {{ $quantity }}
+                        @if ($quantity === 1)
+                            (One item)
+                        @elseif ($quantity === 2)
+                            (Two items)
+                        @elseif ($quantity === 3)
+                            (Three items)
+                        @else
+                            (Four items)
+                        @endif
+                    </td>
+                    <td>${{ number_format($originalPrice, 2) }}</td>
+                    <td>${{ number_format($bundlePrice, 2) }}</td>
+                    <td>${{ number_format($savings, 2) }}</td>
+                </tr>
+            @endfor
+        </tbody>
+    </table>
+</div>
+
+<!-- Action Buttons -->
+<div class="product-actions" style="margin-top: 20px;">
+    <button class="btn btn-success" onclick="orderViaWhatsApp()">Order via WhatsApp</button>
+    <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+    <a href="{{ route('cart') }}" class="btn btn-info">View Cart</a>
+</div>
+
+<!-- Related Products Section -->
+<div class="related-products">
+    <h2>Products You Might Like</h2>
+    <div class="related-products-grid">
+        @foreach ($relatedProducts as $relatedProduct)
+            <div class="related-product">
+                <a href="{{ route('products.show', $relatedProduct->id) }}">
+                    <img src="{{ asset('storage/' . $relatedProduct->images->first()->image_path) }}"
+                        alt="{{ $relatedProduct->name }}" style="width: 100%; height: auto;">
+                    <h3>{{ $relatedProduct->name }}</h3>
+                    <p>${{ $relatedProduct->price }}</p>
+                </a>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- JavaScript to Change Image Based on Color -->
+<script>
+    function changeImage(imageUrl) {
+        document.getElementById('product-image').src = imageUrl;
+    }
+
+    function orderViaWhatsApp() {
+        const message = encodeURIComponent(`Hello, I would like to inquire about the product: {{ $product->name }}.`);
+        const phone = "+254745478277";
+        const url = `https://wa.me/${phone}?text=${message}`;
+        window.open(url, "_blank");
+    }
+
+    function addToCart() {
+        alert('Product added to cart!');
+    }
+</script>

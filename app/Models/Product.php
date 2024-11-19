@@ -9,16 +9,22 @@ class Product extends Model
 {
     use HasFactory;
 
-    // The table associated with the model
-    protected $table = 'products';
-
-    // The attributes that are mass assignable
     protected $fillable = [
         'name',
         'price',
         'slashed_price',
-        'color',
         'description',
-        'images', 
+        'design_description',
+        'features'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(ProductVideo::class);
+    }
 }

@@ -3,12 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\Admin\OrderController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,40 +72,51 @@ Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-// Admin Routes
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('products', ProductController::class);
-});
 
-// Frontend Routes
-Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
-Route::get('/product/{id}', [ProductController::class, 'showProduct'])->name('product.show');
 
-Route::get('/shop/search', [ProductController::class, 'search'])->name('shop.search');
-Route::get('/shop/load-more', [ProductController::class, 'loadMore']);
+
 Route::post('/contact', [ContactFormController::class, 'submit'])->name('contact.submit');
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe']);
 
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
-Route::patch('/cart/update', [CartController::class, 'update'])->name('cart.update');
-Route::delete('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
-Route::get('/cart/count', [CartController::class, 'getCount'])->name('cart.count');
 
 
-// Checkout routes
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.place-order');
-Route::get('/order/confirmation/{id}', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::post('/product', [ProductController::class, 'store'])->name('products.store');
 
-// // Admin routes
-// Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
-//     Route::get('/orders', [Admin\OrderController::class, 'index'])->name('orders.index');
-//     Route::get('/orders/{order}', [Admin\OrderController::class, 'show'])->name('orders.show');
-//     Route::patch('/orders/{order}/status', [Admin\OrderController::class, 'updateStatus'])->name('orders.update-status');
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::get('/admin/products', [ProductController::class, 'adminIndex'])->name('admin.products.index'); // Admin view all products
+//     Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin.products.create'); // Admin create product form
+//     Route::post('/admin/products', [ProductController::class, 'store'])->name('admin.products.store'); // Admin store new product
+//     Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit'); // Admin edit product form
+//     Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.products.update'); // Admin update product
+//     Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy'); // Admin delete product
 // });
 
-Route::get('admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
-Route::get('admin/orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
-Route::patch('admin/orders/{order}/status', [OrderController::class, 'updateStatus'])->name('admin.orders.update-status');
+Route::get('/admin/products', [ProductController::class, 'adminIndex'])->name('admin.products.index'); // Admin view all products
+Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin.products.create'); // Admin create product form
+Route::post('/admin/products', [ProductController::class, 'store'])->name('admin.products.store'); // Admin store new product
+Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit'); // Admin edit product form
+Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.products.update'); // Admin update product
+Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy'); // Admin delete product
+Route::get('/shop', [ProductController::class, 'index'])->name('shop');
+
+
+// Route to view the cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
+// Route to add a product to the cart
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.to.cart');
+
+// Route to remove a product from the cart
+Route::delete('/remove-from-cart/{productId}', [CartController::class, 'removeFromCart'])->name('remove.from.cart');
+
+// Route to update the quantity of a product in the cart
+Route::put('/update-cart/{productId}', [CartController::class, 'updateQuantity'])->name('update.cart');
+
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+
+Route::resource('products', ProductController::class);
+Route::put('/cart/update/{productId}', [CartController::class, 'updateQuantity'])->name('update.cart');
+Route::delete('/cart/remove/{productId}', [CartController::class, 'removeFromCart'])->name('remove.from.cart');

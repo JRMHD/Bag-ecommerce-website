@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
@@ -15,14 +18,25 @@ return new class extends Migration
             $table->string('phone');
             $table->text('address');
             $table->text('note')->nullable();
-            $table->decimal('total_amount', 10, 2);
-            $table->enum('status', ['pending', 'processing', 'shipped', 'delivered'])->default('pending');
-            $table->json('items');
+            $table->decimal('total', 8, 2);
+            $table->timestamps();
+        });
+
+        Schema::create('order_product', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity');
+            $table->decimal('price', 8, 2);
             $table->timestamps();
         });
     }
 
-    public function down()
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
         Schema::dropIfExists('orders');
     }

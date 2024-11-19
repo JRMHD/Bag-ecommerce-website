@@ -2,98 +2,96 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
+    // Show the shopping cart
     public function index()
     {
-        $cartItems = session()->get('cart', []);
-        $total = 0;
+        // Retrieve the cart from the session
+        $cart = Session::get('cart', []);
 
-        // Calculate total and get product details
-        foreach ($cartItems as $id => $details) {
-            $total += $details['price'] * $details['quantity'];
+        // Calculate total price and other cart info
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
         }
 
-        return view('cart', compact('cartItems', 'total'));
+        // Pass cart items and total price to the view
+        return view('cart', compact('cart', 'total'));
     }
 
-    public function add(Request $request)
+    // Add a product to the cart
+    public function addToCart(Request $request)
     {
+        // Retrieve the product from the database
         $product = Product::findOrFail($request->product_id);
-        $cart = session()->get('cart', []);
 
-        if (isset($cart[$request->product_id])) {
-            $cart[$request->product_id]['quantity']++;
+        // Get the current cart from the session
+        $cart = Session::get('cart', []);
+
+        // Check if the product is already in the cart
+        if (isset($cart[$product->id])) {
+            // If the product is already in the cart, increase the quantity
+            $cart[$product->id]['quantity']++;
         } else {
-            $cart[$request->product_id] = [
+            // Otherwise, add the product to the cart with quantity 1
+            $cart[$product->id] = [
                 'name' => $product->name,
-                'quantity' => 1,
                 'price' => $product->price,
-                'image' => json_decode($product->images)[0],
-                'color' => $product->color
+                'quantity' => 1,
+                'image' => asset('storage/' . $product->images->first()->image_path), // Assuming you have product images
             ];
         }
 
-        session()->put('cart', $cart);
-        return response()->json([
-            'success' => true,
-            'message' => 'Product added to cart successfully!',
-            'cartCount' => count($cart)
-        ]);
+        // Store the updated cart in the session
+        Session::put('cart', $cart);
+
+        // Redirect back with a success message
+        return redirect()->route('product.show', $product->id)
+            ->with('success', 'Product added to cart successfully!');
     }
 
-    public function update(Request $request)
+    // Remove an item from the cart
+    public function removeFromCart($productId)
     {
-        if ($request->product_id && $request->quantity) {
-            $cart = session()->get('cart');
-            $cart[$request->product_id]['quantity'] = $request->quantity;
-            session()->put('cart', $cart);
-
-            // Calculate new totals
-            $itemTotal = $cart[$request->product_id]['price'] * $request->quantity;
-            $cartTotal = 0;
-            foreach ($cart as $item) {
-                $cartTotal += $item['price'] * $item['quantity'];
-            }
-
-            return response()->json([
-                'success' => true,
-                'message' => 'Cart updated successfully!',
-                'itemTotal' => number_format($itemTotal),
-                'cartTotal' => number_format($cartTotal)
-            ]);
+        // Retrieve the current cart from the session
+        $cart = Session::get('cart', []);
+    
+        // Remove the product from the cart
+        if (isset($cart[$productId])) {
+            unset($cart[$productId]);
         }
+    
+        // Update the cart in the session
+        Session::put('cart', $cart);
+    
+        // Redirect back with a success message
+        return redirect()->route('cart')
+            ->with('success', 'Product removed from cart!');
     }
+    
 
-    public function remove(Request $request)
+    // Update the quantity of a product in the cart
+    public function updateQuantity(Request $request, $productId)
     {
-        if ($request->product_id) {
-            $cart = session()->get('cart');
-            if (isset($cart[$request->product_id])) {
-                unset($cart[$request->product_id]);
-                session()->put('cart', $cart);
-            }
-
-            $cartTotal = 0;
-            foreach ($cart as $item) {
-                $cartTotal += $item['price'] * $item['quantity'];
-            }
-
-            return response()->json([
-                'success' => true,
-                'message' => 'Product removed from cart!',
-                'cartCount' => count($cart),
-                'cartTotal' => number_format($cartTotal)
-            ]);
+        // Retrieve the current cart from the session
+        $cart = Session::get('cart', []);
+    
+        // If the product exists in the cart, update its quantity
+        if (isset($cart[$productId])) {
+            $cart[$productId]['quantity'] = $request->quantity;
         }
+    
+        // Update the cart in the session
+        Session::put('cart', $cart);
+    
+        // Redirect back with a success message
+        return redirect()->route('cart')
+            ->with('success', 'Cart updated successfully!');
     }
-
-    public function getCount()
-    {
-        $cart = session()->get('cart', []);
-        return response()->json(['count' => count($cart)]);
-    }
+    
 }

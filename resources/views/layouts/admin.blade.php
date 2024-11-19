@@ -198,11 +198,11 @@
                 <i class="fas fa-box"></i>
                 Products
             </a>
-            <a href="{{ route('admin.orders.index') }}" class="nav-link">
+            <a href="{{ url('/admin/orders') }}" class="nav-link">
                 <i class="fas fa-shopping-cart"></i>
                 Orders
             </a>
-            <a href="{{ route('admin.orders.index') }}" class="nav-link">
+            <a href="{{ url('/admin/orders') }}" class="nav-link">
                 <i class="fas fa-users"></i>
                 Customers
             </a>

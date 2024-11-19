@@ -124,88 +124,177 @@
         </div>
         <!-- breadcrumb end -->
 
-        <section style="background-color: #f8fafc; padding: 48px 16px;">
-            <div style="max-width: 1280px; margin: 0 auto;">
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 0 16px;">
-                    @foreach ($products as $product)
-                        <div
-                            style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); transition: all 0.3s ease; position: relative;">
-                            <!-- Image Container -->
-                            @if ($product->images)
-                                <div style="position: relative; width: 100%; padding-top: 100%;">
-                                    <img src="{{ asset('storage/' . json_decode($product->images)[0]) }}"
-                                        alt="{{ $product->name }}"
-                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                    @if ($product->slashed_price)
-                                        <div
-                                            style="position: absolute; top: 16px; right: 16px; background-color: #FF6B35; color: white; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">
-                                            SALE
-                                        </div>
-                                    @endif
+        <section
+            style="
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f0f2f5; 
+    padding: 2rem 1rem;
+    width: 100%;
+">
+            <div
+                style="
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 1600px;
+        margin: 0 auto;
+        width: 100%;
+    ">
+                @foreach ($products as $product)
+                    <div style="
+                background: linear-gradient(145deg, #ffffff, #f0f0f0);
+                border-radius: 20px;
+                box-shadow: 
+                    -10px -10px 30px rgba(255,255,255,0.8), 
+                    10px 10px 30px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            "
+                        class="product-card">
+                        <a href="{{ route('products.show', $product->id) }}"
+                            style="
+                    text-decoration: none; 
+                    color: inherit;
+                    display: block;
+                ">
+                            <div
+                                style="
+                        height: 350px; 
+                        position: relative;
+                        overflow: hidden;
+                    ">
+                                <img src="{{ asset('storage/' . $product->images->first()->image_path) }}"
+                                    alt="{{ $product->name }}"
+                                    style="
+                                width: 100%; 
+                                height: 100%; 
+                                object-fit: cover;
+                                transition: transform 0.5s ease;
+                            ">
+                                <div
+                                    style="
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            background-color: rgba(0,0,0,0.6);
+                            color: white;
+                            padding: 5px 10px;
+                            border-radius: 20px;
+                            font-size: 0.8rem;
+                        ">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <span style="color: #FFD700; text-shadow: 0 0 5px rgba(255,215,0,0.5);">★</span>
+                                    @endfor
                                 </div>
-                            @endif
+                            </div>
 
-                            <!-- Content Container -->
-                            <div style="padding: 20px;">
-                                <!-- Title -->
-                                <h2
-                                    style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin: 0 0 12px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <div
+                                style="
+                        padding: 1.5rem;
+                        background: white;
+                        position: relative;
+                        z-index: 10;
+                    ">
+                                <h3
+                                    style="
+                            font-size: 1.3rem; 
+                            font-weight: 700; 
+                            color: #1a1a2e;
+                            margin-bottom: 0.5rem;
+                            letter-spacing: -0.5px;
+                        ">
                                     {{ $product->name }}
-                                </h2>
+                                </h3>
 
-                                <!-- Rating -->
-                                <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                                    <div style="display: flex; gap: 2px;">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            <svg style="width: 16px; height: 16px; fill: #FF6B35;" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        @endfor
-                                        <span style="margin-left: 4px; font-size: 14px; color: #666;">4.8</span>
-                                    </div>
-                                </div>
-
-                                <!-- Price -->
-                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                    <span style="font-size: 24px; font-weight: 700; color: #2B4FFE;">KES
-                                        {{ $product->price }}</span>
-                                    @if ($product->slashed_price)
-                                        <span
-                                            style="font-size: 16px; color: #666; text-decoration: line-through;">KES{{ $product->slashed_price }}</span>
-                                    @endif
-                                </div>
-
-                                <!-- Color -->
-                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                    <span style="font-size: 14px; color: #666;">Color:</span>
-                                    <span
-                                        style="padding: 4px 12px; background-color: #f1f5f9; border-radius: 20px; font-size: 14px; color: #1a1a1a;">
-                                        {{ $product->color }}
-                                    </span>
-                                </div>
-
-                                <!-- Description -->
                                 <p
-                                    style="font-size: 14px; color: #666; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                                    style="
+                            color: #6c757d;
+                            font-size: 0.85rem;
+                            line-height: 1.5;
+                            margin-bottom: 1rem;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            height: 3rem;
+                        ">
                                     {{ $product->description }}
                                 </p>
 
-                                <!-- Button -->
-                                <a href="{{ route('product.show', $product->id) }}"
-                                    style="display: block; width: 100%; padding: 12px 0; background-color: #2B4FFE; color: white; text-align: center; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 16px; transition: background-color 0.3s ease; box-shadow: 0 2px 4px rgba(43, 79, 254, 0.2);"
-                                    onmouseover="this.style.backgroundColor='#2342E6'"
-                                    onmouseout="this.style.backgroundColor='#2B4FFE'">
-                                    View Details
-                                </a>
+                                <div
+                                    style="
+                            display: flex; 
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-top: 0.5rem;
+                        ">
+                                    <div
+                                        style="
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                color: #4a4a4a;
+                            ">
+                                        @if ($product->slashed_price)
+                                            <span
+                                                style="
+                                        text-decoration: line-through; 
+                                        color: #b0b0b0; 
+                                        font-size: 1rem;
+                                        margin-right: 0.5rem;
+                                    ">
+                                                KES {{ number_format($product->slashed_price, 2) }}
+                                            </span>
+                                        @endif
+                                        <span style="color: #007bff;">
+                                            KES {{ number_format($product->price, 2) }}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </section>
 
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+            @media (max-width: 768px) {
+                section>div {
+                    grid-template-columns: 1fr !important;
+                    gap: 1rem !important;
+                }
+
+                .product-card {
+                    max-width: 100%;
+                }
+
+                .product-card div[style*="height: 350px"] {
+                    height: 250px !important;
+                }
+
+                .product-card h3 {
+                    font-size: 1.1rem !important;
+                }
+
+                .product-card p {
+                    font-size: 0.8rem !important;
+                    height: 2.5rem !important;
+                }
+
+                .product-card div[style*="font-size: 1.5rem"] {
+                    font-size: 1.2rem !important;
+                }
+            }
+
+            @media (min-width: 769px) {
+                section>div {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                }
+            }
+        </style>
 
         <!-- footer start -->
         @include('footer')
