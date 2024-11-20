@@ -45,9 +45,26 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column - Images & Videos -->
+            <div class="space-y-6">
+                <!-- Main Image -->
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img id="product-image" src="{{ asset('storage/' . $product->images->first()->image_path) }}"
+                        alt="{{ $product->name }}" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Thumbnail Images -->
+                <div class="grid grid-cols-5 gap-2">
+                    @foreach ($product->images as $image)
+                        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Product thumbnail"
+                            class="thumbnail-image w-full h-20 object-cover rounded-lg shadow cursor-pointer"
+                            onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
+                    @endforeach
+                </div>
+            </div>
+
             <!-- Right Column - Product Details -->
             <div class="space-y-6">
-
                 <div
                     class="flex items-center justify-center bg-green-100 border border-green-300 rounded-full px-3 py-1 space-x-2">
                     <span class="text-sm font-semibold text-green-700 uppercase">
@@ -134,13 +151,13 @@
                                 class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
                                 data-color="{{ $image->color }}"
                                 onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
-                                <span class="w-4 h-4 rounded-full" style="background-color: {{ $image->color }}"></span>
+                                <span class="w-4 h-4 rounded-full"
+                                    style="background-color: {{ $image->color }}"></span>
                                 <span>{{ ucfirst($image->color) }}</span>
                             </button>
                         @endforeach
                     </div>
                 </div>
-
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col space-y-3">
@@ -191,67 +208,51 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Left Column - Images & Videos -->
-            <div class="space-y-6">
-                <!-- Main Image -->
-                <div class="bg-white rounded-lg shadow-lg p-4">
-                    <img id="product-image" src="{{ asset('storage/' . $product->images->first()->image_path) }}"
-                        alt="{{ $product->name }}" class="w-full h-auto object-cover rounded-lg">
+        <!-- Shipping Information (Moved up) -->
+        <div class="mt-16 bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-lg font-semibold flex items-center">
+                <svg class="w-6 h-6 mr-2 shipping-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+                Shipping Information
+            </h3>
+            <div class="space-y-4 mt-4">
+                <div class="flex items-center text-sm">
+                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    Processing Time: 2 - 3 business days
                 </div>
-
-                <!-- Thumbnail Images -->
-                <div class="grid grid-cols-5 gap-2">
-                    @foreach ($product->images as $image)
-                        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Product thumbnail"
-                            class="thumbnail-image w-full h-20 object-cover rounded-lg shadow cursor-pointer"
-                            onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
-                    @endforeach
-                </div>
-
-                <!-- Shipping Information -->
-                <div class="bg-white rounded-lg shadow-lg p-6 space-y-4">
-                    <h3 class="text-lg font-semibold flex items-center">
-                        <svg class="w-6 h-6 mr-2 shipping-icon" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                        </svg>
-                        Shipping Information
-                    </h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-sm">
-                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                            Processing Time: 2 - 3 business days
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                            Transit Time: 2 - 7 business days
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Gallery -->
-                <div class="video-gallery">
-                    @foreach ($product->videos as $video)
-                        <div class="video-container">
-                            <video autoplay muted loop>
-                                <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    @endforeach
+                <div class="flex items-center text-sm">
+                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Transit Time: 2 - 7 business days
                 </div>
             </div>
         </div>
+
+        <!-- Video Gallery (Moved up) -->
+        <div class="mt-16 video-gallery">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($product->videos as $video)
+                    <div class="video-container">
+                        <video autoplay muted loop class="w-full rounded-lg shadow-lg">
+                            <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
 
         <!-- Bundle and Save Section -->
         <div class="mt-16 bg-white rounded-lg shadow-lg p-8">
