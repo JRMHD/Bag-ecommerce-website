@@ -327,8 +327,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Order Notes (Optional)</label>
-                            <textarea name="note" rows="2" placeholder="Any special instructions for delivery"></textarea>
+                            <label>Color</label>
+                            <textarea name="note" rows="2" placeholder="Eg. Black,Pink,Blue"></textarea>
                         </div>
 
                         <div class="trust-info">

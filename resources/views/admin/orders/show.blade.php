@@ -183,6 +183,12 @@
                         <div class="info-value">{{ $order->address }}</div>
                     </div>
                 </div>
+                <div class="info-section">
+                    <div class="info-item">
+                        <div class="info-label">Color</div>
+                        <div class="info-value">{{ $order->note }}</div>
+                    </div>
+                </div>
             </div>
 
             <div class="order-products">

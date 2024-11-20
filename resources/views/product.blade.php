@@ -45,6 +45,153 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Right Column - Product Details -->
+            <div class="space-y-6">
+
+                <div
+                    class="flex items-center justify-center bg-green-100 border border-green-300 rounded-full px-3 py-1 space-x-2">
+                    <span class="text-sm font-semibold text-green-700 uppercase">
+                        Hot Product
+                    </span>
+                    <span class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Limited Stock
+                    </span>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h1>
+
+                <!-- Rating Section -->
+                <div class="flex items-center space-x-2">
+                    <div class="star-rating text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-gray-600">(4.9/5 - 256 Reviews)</span>
+                </div>
+                <!-- Price Section -->
+                <div class="flex items-center space-x-4">
+                    @if ($product->slashed_price)
+                        <span class="text-gray-500 line-through text-2xl">KES
+                            {{ number_format($product->slashed_price, 2) }}</span>
+                        <span class="text-3xl font-bold text-red-600">KES
+                            {{ number_format($product->price, 2) }}</span>
+                        <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">
+                            Save
+                            {{ round((($product->slashed_price - $product->price) / $product->slashed_price) * 100) }}%
+                        </span>
+                    @else
+                        <span class="text-3xl font-bold text-gray-900">KES
+                            {{ number_format($product->price, 2) }}</span>
+                    @endif
+                </div>
+
+                @if (session('success'))
+                    <div class="alert alert-success" style="background-color: #28a745; color: white;">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <div
+                    style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px; font-family: Arial, sans-serif; background-color: #f0f4f8; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-width: 600px; margin: 20px auto;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">TSA Approved</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Carry-on Sized</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Large Storage Capacity</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Easily Pack and Go</span>
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-medium">Select Color</h3>
+                    <div class="flex flex-wrap gap-3">
+                        @foreach ($product->images as $image)
+                            <button
+                                class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
+                                data-color="{{ $image->color }}"
+                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
+                                <span class="w-4 h-4 rounded-full" style="background-color: {{ $image->color }}"></span>
+                                <span>{{ ucfirst($image->color) }}</span>
+                            </button>
+                        @endforeach
+                    </div>
+                </div>
+
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col space-y-3">
+                    <button onclick="orderViaWhatsApp()"
+                        class="flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+
+                    <form action="{{ route('add.to.cart') }}" method="POST" class="w-full">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <button type="submit"
+                            class="w-full flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span>Add to Cart</span>
+                        </button>
+                    </form>
+
+                    <a href="{{ route('cart') }}"
+                        class="flex items-center justify-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span>View Cart</span>
+                    </a>
+                </div>
+
+                <!-- Product Information -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Product Description</h3>
+                        <p class="text-gray-600">{{ $product->description }}</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Design Details</h3>
+                        <p class="text-gray-600">{{ $product->design_description }}</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4">Features</h3>
+                        <p class="text-gray-600">{{ $product->features }}</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Left Column - Images & Videos -->
             <div class="space-y-6">
                 <!-- Main Image -->
@@ -104,156 +251,6 @@
                     @endforeach
                 </div>
             </div>
-
-            <!-- Right Column - Product Details -->
-            <div class="space-y-6">
-
-                <div
-                    class="flex items-center justify-center bg-green-100 border border-green-300 rounded-full px-3 py-1 space-x-2">
-                    <span class="text-sm font-semibold text-green-700 uppercase">
-                        Hot Product
-                    </span>
-                    <span class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        Limited Stock
-                    </span>
-                </div>
-                <h1 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h1>
-
-                <!-- Rating Section -->
-                <div class="flex items-center space-x-2">
-                    <div class="star-rating text-xl">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text-gray-600">(4.9/5 - 256 Reviews)</span>
-                </div>
-                <!-- Price Section -->
-                <div class="flex items-center space-x-4">
-                    @if ($product->slashed_price)
-                        <span class="text-gray-500 line-through text-2xl">KES
-                            {{ number_format($product->slashed_price, 2) }}</span>
-                        <span class="text-3xl font-bold text-red-600">KES
-                            {{ number_format($product->price, 2) }}</span>
-                        <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">
-                            Save
-                            {{ round((($product->slashed_price - $product->price) / $product->slashed_price) * 100) }}%
-                        </span>
-                    @else
-                        <span class="text-3xl font-bold text-gray-900">KES
-                            {{ number_format($product->price, 2) }}</span>
-                    @endif
-                </div>
-
-                @if (session('success'))
-                    <div class="alert alert-success" style="background-color: #28a745; color: white;">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                <div
-                    style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px; font-family: Arial, sans-serif; background-color: #f0f4f8; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-width: 600px; margin: 20px auto;">
-                    {{-- <h2 style="font-size: 24px; color: #333; margin-bottom: 20px; font-weight: bold;">Why Choose Us?
-                    </h2> --}}
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
-                            height="24" style="margin-right: 10px;">
-                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
-                        </svg>
-                        <span style="font-size: 16px; color: #555;">TSA Approved</span>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
-                            height="24" style="margin-right: 10px;">
-                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
-                        </svg>
-                        <span style="font-size: 16px; color: #555;">Carry-on Sized</span>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
-                            height="24" style="margin-right: 10px;">
-                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
-                        </svg>
-                        <span style="font-size: 16px; color: #555;">Large Storage Capacity</span>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
-                            height="24" style="margin-right: 10px;">
-                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
-                        </svg>
-                        <span style="font-size: 16px; color: #555;">Easily Pack and Go</span>
-                    </div>
-                </div>
-
-                <!-- Color Selection -->
-                <div class="space-y-3">
-                    <h3 class="text-lg font-medium">Select Color</h3>
-                    <div class="flex flex-wrap gap-3">
-                        @foreach ($product->images as $image)
-                            <button
-                                class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
-                                data-color="{{ $image->color }}"
-                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
-                                <span class="w-4 h-4 rounded-full"
-                                    style="background-color: {{ $image->color }}"></span>
-                                <span>{{ ucfirst($image->color) }}</span>
-                            </button>
-                        @endforeach
-                    </div>
-                </div>
-
-
-                <!-- Action Buttons -->
-                <div class="flex flex-col space-y-3">
-                    <button onclick="orderViaWhatsApp()"
-                        class="flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                        <span>Order via WhatsApp</span>
-                    </button>
-
-                    <form action="{{ route('add.to.cart') }}" method="POST" class="w-full">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                        <button type="submit"
-                            class="w-full flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            <span>Add to Cart</span>
-                        </button>
-                    </form>
-
-                    <a href="{{ route('cart') }}"
-                        class="flex items-center justify-center space-x-2 bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
-                        <span>View Cart</span>
-                    </a>
-                </div>
-
-                <!-- Product Information -->
-                <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Product Description</h3>
-                        <p class="text-gray-600">{{ $product->description }}</p>
-                    </div>
-
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Design Details</h3>
-                        <p class="text-gray-600">{{ $product->design_description }}</p>
-                    </div>
-
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Features</h3>
-                        <p class="text-gray-600">{{ $product->features }}</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Bundle and Save Section -->
@@ -262,7 +259,6 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @for ($quantity = 1; $quantity <= 4; $quantity++)
                     @php
-                        // Reversing the logic: slashed_price is the original price, price is the discounted price
                         $originalPrice = $product->slashed_price * $quantity;
                         $bundlePrice = $product->price * $quantity;
                         $savings = $originalPrice - $bundlePrice;
