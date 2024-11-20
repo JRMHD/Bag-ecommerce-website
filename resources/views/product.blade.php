@@ -107,6 +107,16 @@
 
             <!-- Right Column - Product Details -->
             <div class="space-y-6">
+
+                <div
+                    class="flex items-center justify-center bg-green-100 border border-green-300 rounded-full px-3 py-1 space-x-2">
+                    <span class="text-sm font-semibold text-green-700 uppercase">
+                        Hot Product
+                    </span>
+                    <span class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        Limited Stock
+                    </span>
+                </div>
                 <h1 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h1>
 
                 <!-- Rating Section -->
@@ -120,23 +130,6 @@
                     </div>
                     <span class="text-gray-600">(4.9/5 - 256 Reviews)</span>
                 </div>
-
-                <!-- Color Selection -->
-                <div class="space-y-3">
-                    <h3 class="text-lg font-medium">Select Color</h3>
-                    <div class="flex flex-wrap gap-3">
-                        @foreach ($product->images as $image)
-                            <button
-                                class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
-                                data-color="{{ $image->color }}"
-                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
-                                <span class="w-4 h-4 rounded-full" style="background-color: {{ $image->color }}"></span>
-                                <span>{{ ucfirst($image->color) }}</span>
-                            </button>
-                        @endforeach
-                    </div>
-                </div>
-
                 <!-- Price Section -->
                 <div class="flex items-center space-x-4">
                     @if ($product->slashed_price)
@@ -159,6 +152,59 @@
                         {{ session('success') }}
                     </div>
                 @endif
+
+                <div
+                    style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px; font-family: Arial, sans-serif; background-color: #f0f4f8; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-width: 600px; margin: 20px auto;">
+                    {{-- <h2 style="font-size: 24px; color: #333; margin-bottom: 20px; font-weight: bold;">Why Choose Us?
+                    </h2> --}}
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">TSA Approved</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Carry-on Sized</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Large Storage Capacity</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#4CAF50" viewBox="0 0 24 24" width="24"
+                            height="24" style="margin-right: 10px;">
+                            <path d="M10 20.5L4.5 15l1.4-1.4L10 17.7l8.1-8.1L19.5 11 10 20.5z" />
+                        </svg>
+                        <span style="font-size: 16px; color: #555;">Easily Pack and Go</span>
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="space-y-3">
+                    <h3 class="text-lg font-medium">Select Color</h3>
+                    <div class="flex flex-wrap gap-3">
+                        @foreach ($product->images as $image)
+                            <button
+                                class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
+                                data-color="{{ $image->color }}"
+                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
+                                <span class="w-4 h-4 rounded-full"
+                                    style="background-color: {{ $image->color }}"></span>
+                                <span>{{ ucfirst($image->color) }}</span>
+                            </button>
+                        @endforeach
+                    </div>
+                </div>
+
+
                 <!-- Action Buttons -->
                 <div class="flex flex-col space-y-3">
                     <button onclick="orderViaWhatsApp()"

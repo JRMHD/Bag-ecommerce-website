@@ -220,14 +220,6 @@
 
             <section
                 style="display: flex; align-items: center; justify-content: space-between; padding: 20px; font-family: Arial, sans-serif;">
-                <!-- Video 1 Section -->
-                <div style="flex: 1; margin-right: 20px; max-width: 100%;">
-                    <video autoplay muted loop
-                        style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
-                        <source src="\assets\VIDEOMAGES\video 1 use.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
 
                 <!-- Video 2 Section -->
                 <div style="flex: 1; margin-left: 20px; max-width: 100%;">
@@ -237,6 +229,16 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
+                <!-- Video 1 Section -->
+                <div style="flex: 1; margin-right: 20px; max-width: 100%;">
+                    <video autoplay muted loop
+                        style="width: 100%; height: auto; max-width: 600px; border-radius: 10px;">
+                        <source src="\assets\VIDEOMAGES\video 1 use.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+
             </section>
 
 
@@ -309,240 +311,117 @@
 
 
             <!-- shop by category start -->
-            <section
-                style="padding: 40px; font-family: Arial, sans-serif; text-align: center; background-color: #fff;">
-                <!-- Top Section -->
-                <div
-                    style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
-                    <div style="flex: 1; max-width: 45%; text-align: left;">
-                        <h1 style="font-size: 36px; font-weight: bold; color: #333;">IMUZ BAGS™</h1>
-                        <p style="font-size: 16px; color: #666; margin: 10px 0;">Simplifying Travel One Journey at a
-                            Time</p>
-                        <a href="shop" style="text-decoration: none;">
-                            <button
-                                style="background-color: #F76C6A; color: #fff; padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
-                                SHOP NOW
-                            </button>
-                        </a>
-                    </div>
+           <section style="padding: 20px; font-family: Arial, sans-serif; text-align: center; background-color: #fff;">
+    <!-- Top Section -->
+    <div style="margin-bottom: 40px;">
+        <h1 style="font-size: 28px; font-weight: bold; color: #333;">IMUZ BAGS™</h1>
+        <p style="font-size: 14px; color: #666; margin: 10px 0;">Simplifying Travel One Journey at a Time</p>
+        <a href="shop" style="text-decoration: none;">
+            <button
+                style="background-color: #F76C6A; color: #fff; padding: 10px 20px; font-size: 14px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                SHOP NOW
+            </button>
+        </a>
+    </div>
 
-                    <!-- Comparison Table -->
-                    <div style="flex: 1; max-width: 45%; overflow-x: auto; margin-top: 20px;">
-                        <table
-                            style="border-collapse: collapse; width: 100%; font-size: 16px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <tr style="background-color: #f7f7f7;">
-                                <th style="padding: 10px 20px; color: #333;">&nbsp;</th>
-                                <th style="padding: 10px 20px; color: #333;">IMUZ BAGS</th>
-                                <th style="padding: 10px 20px; color: #333;">Others</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px 20px; border: 1px solid #ddd;">2-in-1 Design</td>
-                                <td
-                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
-                                    ✔</td>
-                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Water-Resistant</td>
-                                <td
-                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
-                                    ✔</td>
-                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Structured Storage</td>
-                                <td
-                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
-                                    ✔</td>
-                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px 20px; border: 1px solid #ddd;">Spacious Interior</td>
-                                <td
-                                    style="padding: 10px 20px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
-                                    ✔</td>
-                                <td style="padding: 10px 20px; text-align: center; border: 1px solid #ddd;">✘</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+    <!-- Comparison Table -->
+    <div style="overflow-x: auto; margin-bottom: 30px;">
+        <table style="border-collapse: collapse; width: 100%; font-size: 14px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <thead>
+                <tr style="background-color: #f7f7f7;">
+                    <th style="padding: 10px; color: #333;">&nbsp;</th>
+                    <th style="padding: 10px; color: #333;">IMUZ BAGS</th>
+                    <th style="padding: 10px; color: #333;">Others</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2-in-1 Design</td>
+                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Water-Resistant</td>
+                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Structured Storage</td>
+                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Spacious Interior</td>
+                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-                <!-- Features Section -->
-                <div
-                    style="display: flex; justify-content: space-around; text-align: center; margin-top: 40px; flex-wrap: wrap;">
-                    <!-- Feature 1 -->
-                    <div style="flex: 1; max-width: 200px; margin: 10px;">
-                        <div style="font-size: 32px; color: #F76C6A;">✈️</div>
-                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">TSA Approved</h3>
-                        <p style="font-size: 14px; color: #666;">Carry-on champion and breeze through check-in.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div style="flex: 1; max-width: 200px; margin: 10px;">
-                        <div style="font-size: 32px; color: #F76C6A;">🌊</div>
-                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Premium Quality</h3>
-                        <p style="font-size: 14px; color: #666;">Durable, water-resistant, and versatile.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div style="flex: 1; max-width: 200px; margin: 10px;">
-                        <div style="font-size: 32px; color: #F76C6A;">🔒</div>
-                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Simplify Packing</h3>
-                        <p style="font-size: 14px; color: #666;">Fit all of your clothes and essentials, stress-free.
-                        </p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div style="flex: 1; max-width: 200px; margin: 10px;">
-                        <div style="font-size: 32px; color: #F76C6A;">👕</div>
-                        <h3 style="font-size: 18px; font-weight: bold; color: #333;">Wrinkle-Free</h3>
-                        <p style="font-size: 14px; color: #666;">Maintain your clothes in crisp and pristine condition.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <style>
-                /* General Table Styles */
-                table {
-                    border-collapse: collapse;
-                    width: 100%;
-                    font-size: 16px;
-                    text-align: left;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
+    <!-- Features Section -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+        <!-- Feature 1 -->
+        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+            <div style="font-size: 32px; color: #F76C6A;">✈️</div>
+            <h3 style="font-size: 16px; font-weight: bold; color: #333;">TSA Approved</h3>
+            <p style="font-size: 12px; color: #666;">Carry-on champion and breeze through check-in.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+            <div style="font-size: 32px; color: #F76C6A;">🌊</div>
+            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Premium Quality</h3>
+            <p style="font-size: 12px; color: #666;">Durable, water-resistant, and versatile.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+            <div style="font-size: 32px; color: #F76C6A;">🔒</div>
+            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Simplify Packing</h3>
+            <p style="font-size: 12px; color: #666;">Fit all of your clothes and essentials, stress-free.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+            <div style="font-size: 32px; color: #F76C6A;">👕</div>
+            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Wrinkle-Free</h3>
+            <p style="font-size: 12px; color: #666;">Maintain your clothes in crisp and pristine condition.</p>
+        </div>
+    </div>
+</section>
 
-                /* Table Row Styles */
-                table tr {
-                    background-color: #f7f7f7;
-                }
+<!-- Responsive Styles -->
+<style>
+    @media (max-width: 768px) {
+        section {
+            padding: 15px;
+        }
 
-                table td,
-                table th {
-                    padding: 10px 20px;
-                    border: 1px solid #ddd;
-                }
+        h1 {
+            font-size: 24px;
+        }
 
-                table th {
-                    background-color: #f7f7f7;
-                    color: #333;
-                }
+        p {
+            font-size: 12px;
+        }
 
-                /* Styles for Mobile Devices */
-                @media (max-width: 768px) {
-                    table {
-                        font-size: 14px;
-                        /* Reduce font size for better fit */
-                    }
+        button {
+            font-size: 12px;
+            padding: 8px 16px;
+        }
 
-                    table td,
-                    table th {
-                        padding: 8px 12px;
-                        /* Adjust padding */
-                    }
+        table {
+            font-size: 12px;
+        }
 
-                    table tr {
-                        display: flex;
-                        flex-direction: column;
-                        /* Make rows stack vertically */
-                    }
+        table td, table th {
+            padding: 8px;
+        }
 
-                    table td,
-                    table th {
-                        text-align: left;
-                        /* Keep text alignment */
-                    }
+        .features {
+            flex-direction: column;
+        }
+    }
+</style>
 
-                    table th:first-child,
-                    table td:first-child {
-                        font-weight: bold;
-                        background-color: #f7f7f7;
-                        /* Highlight the first column */
-                    }
-                }
-            </style>
-
-            <!-- Responsive Styles -->
-            <style>
-                /* For Tablets and Smaller Devices */
-                @media (max-width: 1024px) {
-                    section {
-                        padding: 20px;
-                    }
-
-                    /* For smaller tablets and mobile screens */
-                    .top-section,
-                    .comparison-table {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-
-                    .comparison-table {
-                        width: 100%;
-                    }
-
-                    .feature {
-                        max-width: 100%;
-                        text-align: center;
-                    }
-
-                    button {
-                        font-size: 14px;
-                        padding: 10px 20px;
-                    }
-
-                    h1 {
-                        font-size: 28px;
-                    }
-
-                    p {
-                        font-size: 14px;
-                    }
-
-                    /* Make sure the table is horizontally scrollable on small screens */
-                    table {
-                        width: 100%;
-                        overflow-x: auto;
-                        display: block;
-                    }
-
-                    .table-container {
-                        overflow-x: auto;
-                    }
-                }
-
-                /* For Mobile Devices */
-                @media (max-width: 768px) {
-                    section {
-                        padding: 20px;
-                    }
-
-                    .top-section,
-                    .comparison-table {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-
-                    .comparison-table {
-                        width: 100%;
-                        overflow-x: auto;
-                    }
-
-                    .feature {
-                        max-width: 100%;
-                        text-align: center;
-                    }
-
-                    button {
-                        font-size: 14px;
-                        padding: 10px 20px;
-                    }
-
-                    h1 {
-                        font-size: 24px;
-                    }
-
-                    p {
-                        font-size: 12px;
-                    }
-                }
-            </style>
 
             <!-- instagram end -->
 
