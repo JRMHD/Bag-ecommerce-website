@@ -21,6 +21,9 @@ class ProductController extends Controller
     {
         $product = Product::with(['images', 'videos'])->findOrFail($id);
 
+        // Group images by color
+        $groupedImages = $product->images->groupBy('color');
+
         // Fetch 4 random products excluding the current product
         $relatedProducts = Product::with('images')
             ->where('id', '!=', $id)
@@ -28,8 +31,9 @@ class ProductController extends Controller
             ->take(4)
             ->get();
 
-        return view('product', compact('product', 'relatedProducts'));
+        return view('product', compact('product', 'groupedImages', 'relatedProducts'));
     }
+
 
 
     // Show admin product listing

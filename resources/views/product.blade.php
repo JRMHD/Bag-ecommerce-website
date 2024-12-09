@@ -54,6 +54,18 @@
                 </div>
 
                 <!-- Thumbnail Images -->
+                <div class="grid grid-cols-5 gap-2" id="image-thumbnails">
+                    @foreach ($groupedImages as $color => $images)
+                        <div class="thumbnail-group" data-color="{{ $color }}" style="display: none;">
+                            @foreach ($images as $image)
+                                <img src="{{ asset('storage/' . $image->image_path) }}" alt="Product thumbnail"
+                                    class="thumbnail-image w-full h-20 object-cover rounded-lg shadow cursor-pointer"
+                                    onclick="changeImage('{{ asset('storage/' . $image->image_path) }}')">
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Thumbnail Images -->
                 <div class="grid grid-cols-5 gap-2">
                     @foreach ($product->images as $image)
                         <img src="{{ asset('storage/' . $image->image_path) }}" alt="Product thumbnail"
@@ -62,7 +74,6 @@
                     @endforeach
                 </div>
             </div>
-
             <!-- Right Column - Product Details -->
             <div class="space-y-6">
                 <div
@@ -146,18 +157,18 @@
                 <div class="space-y-3">
                     <h3 class="text-lg font-medium">Select Color</h3>
                     <div class="flex flex-wrap gap-3">
-                        @foreach ($product->images as $image)
+                        @foreach ($groupedImages as $color => $images)
                             <button
                                 class="color-btn flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all duration-200"
-                                data-color="{{ $image->color }}"
-                                onclick="changeImage('{{ asset('storage/' . $image->image_path) }}', this)">
+                                data-color="{{ $color }}" onclick="showImagesByColor('{{ $color }}')">
                                 <span class="w-4 h-4 rounded-full"
-                                    style="background-color: {{ $image->color }}"></span>
-                                <span>{{ ucfirst($image->color) }}</span>
+                                    style="background-color: {{ $images->first()->color }}"></span>
+                                <span>{{ ucfirst($color) }}</span>
                             </button>
                         @endforeach
                     </div>
                 </div>
+
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col space-y-3">
@@ -269,13 +280,15 @@
                         class="relative p-6 border rounded-lg {{ $isMostPopular ? 'border-blue-500 bg-blue-50' : 'border-gray-200' }}">
                         @if ($isMostPopular)
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Most Popular</span>
+                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Most
+                                    Popular</span>
                             </div>
                         @endif
                         <div class="text-center">
                             <h3 class="text-xl font-semibold mb-2">Buy {{ $quantity }}</h3>
                             <p class="text-gray-500 line-through">KES {{ number_format($originalPrice, 2) }}</p>
-                            <p class="text-2xl font-bold text-gray-900 mb-2">KES {{ number_format($bundlePrice, 2) }}
+                            <p class="text-2xl font-bold text-gray-900 mb-2">KES
+                                {{ number_format($bundlePrice, 2) }}
                             </p>
                             @if ($savings > 0)
                                 <p class="text-green-600 text-sm">Save KES {{ number_format($savings, 2) }}</p>
@@ -312,50 +325,29 @@
     </div>
 
     <script>
-        function changeImage(imageUrl) {
-            const img = document.getElementById('product-image');
-            img.style.opacity = '0';
-            setTimeout(() => {
-                img.src = imageUrl;
-                img.style.opacity = '1';
-            }, 300);
+        function showImagesByColor(color) {
+            // Hide all thumbnail groups
+            document.querySelectorAll('.thumbnail-group').forEach(function(group) {
+                group.style.display = 'none';
+            });
 
-            // Remove active class from all buttons
-            document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            event.currentTarget.classList.add('active');
+            // Show the thumbnail group for the selected color
+            const selectedGroup = document.querySelector(`.thumbnail-group[data-color="${color}"]`);
+            if (selectedGroup) {
+                selectedGroup.style.display = 'block';
+            }
+
+            // Optionally, change the main image to the first image of the selected color
+            const firstImage = selectedGroup.querySelector('img');
+            if (firstImage) {
+                changeImage(firstImage.src);
+            }
         }
 
-        function orderViaWhatsApp() {
-            const message = encodeURIComponent(`Hello, I would like to inquire about the product: {{ $product->name }}.`);
-            const phone = "+254745478277";
-            const url = `https://wa.me/${phone}?text=${message}`;
-            window.open(url, "_blank");
+        function changeImage(imageSrc) {
+            const mainImage = document.getElementById('product-image');
+            mainImage.src = imageSrc;
         }
-
-        function addToCart() {
-            const btn = event.currentTarget;
-            btn.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
-            btn.style.background = 'var(--success-green)';
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-                btn.style.background = 'var(--royal-blue)';
-            }, 2000);
-        }
-
-        function toggleSection(element) {
-            const content = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            content.classList.toggle('show');
-            icon.classList.toggle('fa-chevron-up');
-            icon.classList.toggle('fa-chevron-down');
-        }
-
-        // Set first color button as active
-        document.querySelector('.color-btn').classList.add('active');
-
-        // Add smooth fade-in effect for images
-        document.getElementById('product-image').style.transition = 'opacity 0.3s ease';
     </script>
 </body>
 

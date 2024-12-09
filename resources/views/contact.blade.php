@@ -28,7 +28,7 @@
     <meta property="og:description"
         content="Contact Imuz Travel Bags for any questions, support, or to place an order. Enjoy affordable travel bags, pay-on-delivery, and countrywide shipping.">
     <meta property="og:image" content="assets/img/contact-us-social.jpg"> <!-- Replace with contact-related image -->
-    <meta property="og:url" content="https://www.imuztravelbags.co.ke/contact">
+    <meta property="og:url" content="https://www.imuz.co.ke/contact">
     <!-- Replace with your contact page URL -->
     <meta property="og:type" content="website">
 
@@ -40,7 +40,7 @@
     <meta name="twitter:image" content="assets/img/contact-us-social.jpg"> <!-- Replace with contact-related image -->
 
     <!-- SEO Scripts -->
-    <link rel="canonical" href="https://www.imuztravelbags.co.ke/contact"> <!-- Update with your contact page URL -->
+    <link rel="canonical" href="https://www.imuz.co.ke/contact"> <!-- Update with your contact page URL -->
 
 
     <!-- all css -->

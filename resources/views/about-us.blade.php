@@ -29,7 +29,7 @@
     <meta property="og:description"
         content="Discover Imuz Travel Bags, where affordability meets quality. Learn more about our pay-on-delivery service and countrywide delivery.">
     <meta property="og:image" content="assets/img/about-us-social.jpg"> <!-- Replace with about-related image -->
-    <meta property="og:url" content="https://www.imuztravelbags.co.ke/about"> <!-- Replace with your about page URL -->
+    <meta property="og:url" content="https://www.imuz.co.ke/about"> <!-- Replace with your about page URL -->
     <meta property="og:type" content="website">
 
     <!-- Twitter Meta -->
@@ -40,7 +40,7 @@
     <meta name="twitter:image" content="assets/img/about-us-social.jpg"> <!-- Replace with about-related image -->
 
     <!-- SEO Scripts -->
-    <link rel="canonical" href="https://www.imuztravelbags.co.ke/about"> <!-- Update with your about page URL -->
+    <link rel="canonical" href="https://www.imuz.co.ke/about"> <!-- Update with your about page URL -->
 
 
     <!-- all css -->

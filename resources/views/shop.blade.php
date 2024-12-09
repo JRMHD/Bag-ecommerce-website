@@ -29,7 +29,7 @@
         content="Explore premium travel bags at affordable prices. Enjoy pay-on-delivery and countrywide shipping with Imuz Travel Bags.">
     <meta property="og:image" content="assets/img/social-share-image.jpg">
     <!-- Replace with a specific shop-related image -->
-    <meta property="og:url" content="https://www.imuztravelbags.co.ke/shop"> <!-- Replace with your shop page URL -->
+    <meta property="og:url" content="https://www.imuz.co.ke/shop"> <!-- Replace with your shop page URL -->
     <meta property="og:type" content="website">
 
     <!-- Twitter Meta -->
@@ -41,7 +41,7 @@
     <!-- Replace with a specific shop-related image -->
 
     <!-- SEO Scripts -->
-    <link rel="canonical" href="https://www.imuztravelbags.co.ke/shop"> <!-- Update with your shop page URL -->
+    <link rel="canonical" href="https://www.imuz.co.ke/shop"> <!-- Update with your shop page URL -->
 
 
     <!-- all css -->

@@ -27,7 +27,7 @@
     <meta property="og:description"
         content="Oops! The page you are trying to access is not available. Check out affordable travel bags on our homepage.">
     <meta property="og:image" content="assets/img/404-error-image.jpg"> <!-- Replace with a relevant 404 image -->
-    <meta property="og:url" content="https://www.imuztravelbags.co.ke/404"> <!-- Replace with your 404 page URL -->
+    <meta property="og:url" content="https://www.imuz.co.ke/404"> <!-- Replace with your 404 page URL -->
     <meta property="og:type" content="website">
 
     <!-- Twitter Meta -->
@@ -38,7 +38,7 @@
     <meta name="twitter:image" content="assets/img/404-error-image.jpg"> <!-- Replace with a relevant 404 image -->
 
     <!-- SEO Scripts -->
-    <link rel="canonical" href="https://www.imuztravelbags.co.ke/404"> <!-- Update with your 404 page URL -->
+    <link rel="canonical" href="https://www.imuz.co.ke/404"> <!-- Update with your 404 page URL -->
 
 
     <!-- all css -->

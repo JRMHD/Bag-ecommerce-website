@@ -31,7 +31,7 @@
         content="Shop premium travel bags at unbeatable prices with Imuz Travel Bags. Pay on delivery and enjoy delivery across Kenya.">
     <meta property="og:image" content="assets/img/social-share-image.jpg">
     <!-- Replace with an appropriate image URL -->
-    <meta property="og:url" content="https://www.imuztravelbags.co.ke"> <!-- Update with your site URL -->
+    <meta property="og:url" content="https://www.imuz.co.ke"> <!-- Update with your site URL -->
     <meta property="og:type" content="website">
 
     <!-- Twitter Meta -->
@@ -43,7 +43,7 @@
     <!-- Replace with an appropriate image URL -->
 
     <!-- SEO Scripts -->
-    <link rel="canonical" href="https://www.imuztravelbags.co.ke"> <!-- Your site URL -->
+    <link rel="canonical" href="https://www.imuz.co.ke"> <!-- Your site URL -->
 
 
     <!-- all css -->
@@ -125,18 +125,18 @@
                 }'>
                     <div class="slide-item slide-item-bag position-relative">
                         <img class="slide-img d-none d-md-block" src="assets/img/slideshow/b1.jpg" alt="slide-1">
-                        <img class="slide-img d-md-none" src="assets/img/slideshow/b1-m.jpg" alt="slide-1">
+                        <img class="slide-img d-md-none" src="assets/img/slideshow/phone1.jpg" alt="slide-1">
                         <div class="content-absolute content-slide">
                             <div class="container height-inherit d-flex align-items-center justify-content-end">
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Discover Affordable Premium Travel Bags
+                                        Discover Affordable
                                     </p>
-                                    {{-- <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
+                                    <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
                                         Premium Travel Bags
-                                    </h2> --}}
+                                    </h2>
                                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
@@ -146,18 +146,18 @@
                     </div>
                     <div class="slide-item position-relative">
                         <img class="slide-img d-none d-md-block" src="assets/img/slideshow/b2.jpg" alt="slide-2">
-                        <img class="slide-img d-md-none" src="assets/img/slideshow/b2-m.jpg" alt="slide-2">
+                        <img class="slide-img d-md-none" src="assets/img/slideshow/phone2.jpg" alt="slide-2">
                         <div class="content-absolute content-slide">
                             <div class="container height-inherit d-flex align-items-center">
                                 <div class="content-box slide-content py-4">
                                     <p class="slide-text heading_24 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
-                                        Pay on Delivery Anywhere in Kenya
+                                        Pay on Delivery
                                     </p>
-                                    {{-- <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
+                                    <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                                         data-animation="animate__animated animate__fadeInUp">
                                         Anywhere in Kenya
-                                    </h2> --}}
+                                    </h2>
                                     <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
                                         data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
@@ -167,7 +167,7 @@
                     </div>
                     <div class="slide-item position-relative">
                         <img class="slide-img d-none d-md-block" src="assets/img/slideshow/b3.jpg" alt="slide-3">
-                        <img class="slide-img d-md-none" src="assets/img/slideshow/b3-m.jpg" alt="slide-3">
+                        <img class="slide-img d-md-none" src="assets/img/slideshow/phone3.jpg" alt="slide-3">
                         <div class="content-absolute content-slide">
                             <div class="container height-inherit d-flex align-items-center justify-content-end">
                                 <div class="content-box slide-content py-4">
@@ -179,8 +179,8 @@
                                         data-animation="animate__animated animate__fadeInUp">
                                         Unbeatable Prices
                                     </h2>
-                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="shop"
-                                        data-animation="animate__animated animate__fadeInUp">SHOP
+                                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
+                                        href="shop" data-animation="animate__animated animate__fadeInUp">SHOP
                                         NOW</a>
                                 </div>
                             </div>
@@ -311,116 +311,130 @@
 
 
             <!-- shop by category start -->
-           <section style="padding: 20px; font-family: Arial, sans-serif; text-align: center; background-color: #fff;">
-    <!-- Top Section -->
-    <div style="margin-bottom: 40px;">
-        <h1 style="font-size: 28px; font-weight: bold; color: #333;">IMUZ BAGS™</h1>
-        <p style="font-size: 14px; color: #666; margin: 10px 0;">Simplifying Travel One Journey at a Time</p>
-        <a href="shop" style="text-decoration: none;">
-            <button
-                style="background-color: #F76C6A; color: #fff; padding: 10px 20px; font-size: 14px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
-                SHOP NOW
-            </button>
-        </a>
-    </div>
+            <section
+                style="padding: 20px; font-family: Arial, sans-serif; text-align: center; background-color: #fff;">
+                <!-- Top Section -->
+                <div style="margin-bottom: 40px;">
+                    <h1 style="font-size: 28px; font-weight: bold; color: #333;">IMUZ BAGS™</h1>
+                    <p style="font-size: 14px; color: #666; margin: 10px 0;">Simplifying Travel One Journey at a Time
+                    </p>
+                    <a href="shop" style="text-decoration: none;">
+                        <button
+                            style="background-color: #F76C6A; color: #fff; padding: 10px 20px; font-size: 14px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                            SHOP NOW
+                        </button>
+                    </a>
+                </div>
 
-    <!-- Comparison Table -->
-    <div style="overflow-x: auto; margin-bottom: 30px;">
-        <table style="border-collapse: collapse; width: 100%; font-size: 14px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <thead>
-                <tr style="background-color: #f7f7f7;">
-                    <th style="padding: 10px; color: #333;">&nbsp;</th>
-                    <th style="padding: 10px; color: #333;">IMUZ BAGS</th>
-                    <th style="padding: 10px; color: #333;">Others</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">2-in-1 Design</td>
-                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
-                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Water-Resistant</td>
-                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
-                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Structured Storage</td>
-                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
-                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Spacious Interior</td>
-                    <td style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">✔</td>
-                    <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                <!-- Comparison Table -->
+                <div style="overflow-x: auto; margin-bottom: 30px;">
+                    <table
+                        style="border-collapse: collapse; width: 100%; font-size: 14px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background-color: #f7f7f7;">
+                                <th style="padding: 10px; color: #333;">&nbsp;</th>
+                                <th style="padding: 10px; color: #333;">IMUZ BAGS</th>
+                                <th style="padding: 10px; color: #333;">Others</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">2-in-1 Design</td>
+                                <td
+                                    style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Water-Resistant</td>
+                                <td
+                                    style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Structured Storage</td>
+                                <td
+                                    style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Spacious Interior</td>
+                                <td
+                                    style="padding: 10px; text-align: center; background-color: #F76C6A; color: #fff; border: 1px solid #ddd;">
+                                    ✔</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">✘</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-    <!-- Features Section -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
-        <!-- Feature 1 -->
-        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
-            <div style="font-size: 32px; color: #F76C6A;">✈️</div>
-            <h3 style="font-size: 16px; font-weight: bold; color: #333;">TSA Approved</h3>
-            <p style="font-size: 12px; color: #666;">Carry-on champion and breeze through check-in.</p>
-        </div>
-        <!-- Feature 2 -->
-        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
-            <div style="font-size: 32px; color: #F76C6A;">🌊</div>
-            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Premium Quality</h3>
-            <p style="font-size: 12px; color: #666;">Durable, water-resistant, and versatile.</p>
-        </div>
-        <!-- Feature 3 -->
-        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
-            <div style="font-size: 32px; color: #F76C6A;">🔒</div>
-            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Simplify Packing</h3>
-            <p style="font-size: 12px; color: #666;">Fit all of your clothes and essentials, stress-free.</p>
-        </div>
-        <!-- Feature 4 -->
-        <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
-            <div style="font-size: 32px; color: #F76C6A;">👕</div>
-            <h3 style="font-size: 16px; font-weight: bold; color: #333;">Wrinkle-Free</h3>
-            <p style="font-size: 12px; color: #666;">Maintain your clothes in crisp and pristine condition.</p>
-        </div>
-    </div>
-</section>
+                <!-- Features Section -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+                    <!-- Feature 1 -->
+                    <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+                        <div style="font-size: 32px; color: #F76C6A;">✈️</div>
+                        <h3 style="font-size: 16px; font-weight: bold; color: #333;">TSA Approved</h3>
+                        <p style="font-size: 12px; color: #666;">Carry-on champion and breeze through check-in.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+                        <div style="font-size: 32px; color: #F76C6A;">🌊</div>
+                        <h3 style="font-size: 16px; font-weight: bold; color: #333;">Premium Quality</h3>
+                        <p style="font-size: 12px; color: #666;">Durable, water-resistant, and versatile.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+                        <div style="font-size: 32px; color: #F76C6A;">🔒</div>
+                        <h3 style="font-size: 16px; font-weight: bold; color: #333;">Simplify Packing</h3>
+                        <p style="font-size: 12px; color: #666;">Fit all of your clothes and essentials, stress-free.
+                        </p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+                        <div style="font-size: 32px; color: #F76C6A;">👕</div>
+                        <h3 style="font-size: 16px; font-weight: bold; color: #333;">Wrinkle-Free</h3>
+                        <p style="font-size: 12px; color: #666;">Maintain your clothes in crisp and pristine condition.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-<!-- Responsive Styles -->
-<style>
-    @media (max-width: 768px) {
-        section {
-            padding: 15px;
-        }
+            <!-- Responsive Styles -->
+            <style>
+                @media (max-width: 768px) {
+                    section {
+                        padding: 15px;
+                    }
 
-        h1 {
-            font-size: 24px;
-        }
+                    h1 {
+                        font-size: 24px;
+                    }
 
-        p {
-            font-size: 12px;
-        }
+                    p {
+                        font-size: 12px;
+                    }
 
-        button {
-            font-size: 12px;
-            padding: 8px 16px;
-        }
+                    button {
+                        font-size: 12px;
+                        padding: 8px 16px;
+                    }
 
-        table {
-            font-size: 12px;
-        }
+                    table {
+                        font-size: 12px;
+                    }
 
-        table td, table th {
-            padding: 8px;
-        }
+                    table td,
+                    table th {
+                        padding: 8px;
+                    }
 
-        .features {
-            flex-direction: column;
-        }
-    }
-</style>
+                    .features {
+                        flex-direction: column;
+                    }
+                }
+            </style>
 
 
             <!-- instagram end -->
